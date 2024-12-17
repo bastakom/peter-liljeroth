@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.button {
+  width: 200px;
+  border: 1px solid white;
+  padding: 15px 20px;
+  display: block;
+  border-radius: 4px;
+}
