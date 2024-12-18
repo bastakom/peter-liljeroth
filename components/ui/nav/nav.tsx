@@ -41,9 +41,8 @@ interface NavBarProps {
 
 export const NavBar = ({ props }: NavBarProps) => {
   const { open, setIsOpenMenu } = useStore();
-
   const { Menu, SoMe_links, Contact, phone_number } = props;
-  console.log(props);
+
   return (
     <div
       className={`absolute px-5 top-0 flex justify-center items-center w-full py-5 z-50`}
@@ -76,7 +75,6 @@ export const NavBar = ({ props }: NavBarProps) => {
 
             <ul className="flex flex-col pl-8 lg:pl-16 pt-16 gap-3">
               {Menu.map((el: LinkItem, index: number) => {
-                console.log("heeeeej", el);
                 return (
                   <Link
                     href={el.link.cached_url}

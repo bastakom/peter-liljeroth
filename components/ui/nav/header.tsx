@@ -5,6 +5,5 @@ import { NavBar } from "./nav";
 
 export const Header = async () => {
   const res = await getAllSettings();
-  console.log("ifrån header", res);
   return <NavBar props={res.story.content} />;
 };
