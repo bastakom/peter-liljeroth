@@ -8,7 +8,6 @@ import { render } from "storyblok-rich-text-react-renderer";
 import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 import { IoIosArrowDown } from "react-icons/io";
-import { IoIosArrowUp } from "react-icons/io";
 
 interface MultiLink {
   url: string;
@@ -72,10 +71,10 @@ interface Logo {
 interface FooterProps {
   props: {
     logo: Logo;
-    Business_info: BusinessInfoItem[];
-    Contact_footer: ContactFooterItem[];
-    SoMe_links: LinkItem[];
-    Menu_footer: LinkItem[];
+    business_info: BusinessInfoItem[];
+    contact_footer: ContactFooterItem[];
+    some_links: LinkItem[];
+    menu_footer: LinkItem[];
     copyright: string;
   };
 }
@@ -83,10 +82,10 @@ interface FooterProps {
 export const FooterSection = ({ props }: FooterProps) => {
   const {
     logo,
-    Business_info,
-    Contact_footer,
-    SoMe_links,
-    Menu_footer,
+    business_info,
+    contact_footer,
+    some_links,
+    menu_footer,
     copyright,
   } = props;
   const { isDropdownFooterOpen, setDropdownFooterOpen } = useStore();
@@ -107,7 +106,7 @@ export const FooterSection = ({ props }: FooterProps) => {
           </div>
           {isDropdownFooterOpen && (
             <ul className=" flex flex-col gap-4">
-              {Menu_footer.map((el: LinkItem, index: number) => {
+              {menu_footer.map((el: LinkItem, index: number) => {
                 return (
                   <Link
                     href={el.link.cached_url}
@@ -127,7 +126,7 @@ export const FooterSection = ({ props }: FooterProps) => {
 
         <div className="text-[#FFFFFF] mt-6 lg:mt-0 lg:flex flex-row gap-32">
           <div className="text-[#FFFFFF] flex flex-row gap-32">
-            {Business_info.map((el: BusinessInfoItem) => (
+            {business_info.map((el: BusinessInfoItem) => (
               <div key={el._uid} className="mb-4 ml-14 lg:ml-0">
                 <h3 className="text-3xl mb-4 font-footer-heading">
                   {el.title}
@@ -142,7 +141,7 @@ export const FooterSection = ({ props }: FooterProps) => {
             ))}
           </div>
 
-          {Contact_footer.map((element: ContactFooterItem) => {
+          {contact_footer.map((element: ContactFooterItem) => {
             return (
               <div key={element._uid} className="mt-6 ml-14 lg:ml-0 lg:mt-0">
                 <h3 className="text-3xl mb-4 font-footer-heading">
@@ -158,11 +157,11 @@ export const FooterSection = ({ props }: FooterProps) => {
                   {element.email.url}
                 </Link>
                 <div className="flex pt-0 lg:pt-8 gap-5 mt-6 lg:mt-[7.2rem] items-center">
-                  <Link href={SoMe_links[0].link.cached_url}>
+                  <Link href={some_links[0].link.cached_url}>
                     <FaFacebookF fontSize={24} color="#F6EEDC" />
                   </Link>
 
-                  <Link href={SoMe_links[1].link.cached_url}>
+                  <Link href={some_links[1].link.cached_url}>
                     <FaInstagram fontSize={24} color="#F6EEDC" />
                   </Link>
                 </div>
@@ -171,7 +170,7 @@ export const FooterSection = ({ props }: FooterProps) => {
           })}
 
           <ul className=" hidden lg:flex flex-col gap-[2.2rem]">
-            {Menu_footer.map((el: LinkItem, index: number) => {
+            {menu_footer.map((el: LinkItem, index: number) => {
               return (
                 <Link
                   href={el.link.cached_url}
