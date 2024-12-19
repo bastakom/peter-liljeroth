@@ -2,10 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --nav-bg: #1D1711;
+}
+
 .button {
   width: 200px;
   border: 1px solid white;
   padding: 15px 20px;
   display: block;
   border-radius: 4px;
+}
+
+
+.nav-bg-color {
+  background-color: var(--nav-bg);
 }
