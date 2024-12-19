@@ -44,7 +44,7 @@ export const NavBar = ({ props }: NavBarProps) => {
   const { Menu, SoMe_links, Contact, phone_number } = props;
 
   return (
-    <div
+    <header
       className={`absolute px-5 top-0 flex justify-center items-center w-full py-5 z-50`}
     >
       <div className="flex justify-center text-white">
@@ -58,7 +58,7 @@ export const NavBar = ({ props }: NavBarProps) => {
           onClick={() => setIsOpenMenu(true)}
         />
         {open && (
-          <div
+          <nav
             className={`nav-bg-color w-[100vw] h-[100vh] lg:w-[32vw] lg:h-[129.3vh] absolute -top-2 -right-5 lg:-top-2 lg:-right-5 transition-all duration-500 ${
               open ? "translate-x-0" : "translate-x-full"
             }`}
@@ -110,9 +110,9 @@ export const NavBar = ({ props }: NavBarProps) => {
               </Link>
               <div className="text-[#FFFFFF] text-xl">{phone_number}</div>
             </div>
-          </div>
+          </nav>
         )}
       </div>
-    </div>
+    </header>
   );
 };
