@@ -32,16 +32,16 @@ interface NavBarProps {
       alt: string;
     };
     site_title: string;
-    Menu: linkItem[];
-    SoMe_links: linkItem[];
-    Contact: linkItem[];
+    menu: linkItem[];
+    some_links: linkItem[];
+    contact: linkItem[];
     phone_number: string;
   };
 }
 
 export const NavBar = ({ props }: NavBarProps) => {
   const { open, setIsOpenMenu } = useStore();
-  const { Menu, SoMe_links, Contact, phone_number } = props;
+  const { menu, some_links, contact, phone_number } = props;
 
   return (
     <header
@@ -74,7 +74,7 @@ export const NavBar = ({ props }: NavBarProps) => {
             </div>
 
             <ul className="flex flex-col pl-8 lg:pl-16 pt-16 gap-3">
-              {Menu.map((el: linkItem, index: number) => {
+              {menu.map((el: linkItem, index: number) => {
                 return (
                   <Link
                     href={el.link.cached_url}
@@ -92,21 +92,21 @@ export const NavBar = ({ props }: NavBarProps) => {
             </div>
 
             <div className="flex px-8 lg:px-16 gap-5 items-center pt-8">
-              <Link href={SoMe_links[0].link.cached_url}>
+              <Link href={some_links[0].link.cached_url}>
                 <FaFacebookF fontSize={30} color="#F6EEDC" />
               </Link>
 
-              <Link href={SoMe_links[1].link.cached_url}>
+              <Link href={some_links[1].link.cached_url}>
                 <FaInstagram fontSize={30} color="#F6EEDC" />
               </Link>
             </div>
 
             <div className="px-10 lg:px-[4.5rem] mt-6 flex flex-col gap-2">
               <Link
-                href={`mailto:${Contact[0].link.cached_url}`}
+                href={`mailto:${contact[0].link.cached_url}`}
                 className="text-[#FFFFFF] text-xl"
               >
-                {Contact[0].link.url}
+                {contact[0].link.url}
               </Link>
               <div className="text-[#FFFFFF] text-xl">{phone_number}</div>
             </div>
