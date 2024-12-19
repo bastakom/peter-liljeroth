@@ -187,7 +187,7 @@ export const FooterSection = ({ props }: FooterProps) => {
       <div className="text-[#FFFFFF] flex flex-row p-6 gap-5 lg:justify-end lg:p-0 lg:px-10 text-[18px] lg:text-[22px] mt-4 lg:mt-40 font-footer-heading">
         <Link href={"#"}>Integritetspolicy</Link>
         <Link href={"#"}>Cookies</Link>
-        <Link href={"#"}>Köpvillkor</Link>
+        <Link href={"#"}>Övrig information</Link>
       </div>
 
       <div className="text-[#FFFFFF] justify-center pb-4 flex lg:justify-end lg:pb-0 lg:px-10 text-[18px] lg:text-[22px] mt-0 lg:mt-6 font-footer-heading">
