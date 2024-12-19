@@ -9,16 +9,16 @@ import { IoCloseOutline } from "react-icons/io5";
 import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 
-interface Link {
+interface link {
   url: string;
   linktype: string;
   fieldtype: string;
   cached_url: string;
 }
 
-interface LinkItem {
+interface linkItem {
   _uid: string;
-  link: Link;
+  link: link;
   title: string;
   component: string;
   _editable: string;
@@ -32,9 +32,9 @@ interface NavBarProps {
       alt: string;
     };
     site_title: string;
-    Menu: LinkItem[];
-    SoMe_links: LinkItem[];
-    Contact: LinkItem[];
+    Menu: linkItem[];
+    SoMe_links: linkItem[];
+    Contact: linkItem[];
     phone_number: string;
   };
 }
@@ -74,7 +74,7 @@ export const NavBar = ({ props }: NavBarProps) => {
             </div>
 
             <ul className="flex flex-col pl-8 lg:pl-16 pt-16 gap-3">
-              {Menu.map((el: LinkItem, index: number) => {
+              {Menu.map((el: linkItem, index: number) => {
                 return (
                   <Link
                     href={el.link.cached_url}
