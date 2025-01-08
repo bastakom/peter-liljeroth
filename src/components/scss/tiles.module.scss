@@ -1,0 +1,26 @@
+.tilesHeading{
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  
+  .tilesSubtitle{
+    font-size: 38px;
+    margin-bottom: 10px;
+  }
+  
+  .tilesParagraph{
+    font-size: 18px;
+  }
+  
+  .container{
+    width:90%;
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: 1024px) {
+    .tilesSubtitle{
+        font-size: 58px;
+        margin-bottom: 10px;
+      }
+  }
+  
