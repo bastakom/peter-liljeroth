@@ -7,6 +7,7 @@ import { Teaser } from "./Teaser";
 import { HeroBlock } from "./hero-block";
 import { CTABlock } from "./cta-block";
 import Contact from "./contact";
+import ImageBlock from "./image-block";
 
 storyblokInit({
   components: {
@@ -15,6 +16,7 @@ storyblokInit({
     hero: HeroBlock,
     CTA: CTABlock,
     contact_page: Contact,
+    image_block: ImageBlock,
   },
   enableFallbackComponent: true,
 });
