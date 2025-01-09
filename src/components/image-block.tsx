@@ -1,42 +1,29 @@
 "use client";
 import { render } from "storyblok-rich-text-react-renderer";
 import style from "./scss/image-block.module.scss";
+import { Links } from "../lib/interface.image-block";
 import Image from "next/image";
-
-interface Mark {
-  type: string;
-}
-
-interface TextNode {
-  text: string;
-  type: "text";
-  marks?: Mark[];
-}
-
-interface ContentNode {
-  type: "heading" | "paragraph" | "hard_break";
-  attrs?: {
-    level?: number;
-  };
-  content?: TextNode[];
-  heading: string;
-}
+import Link from "next/link";
 
 interface ImageBlockProps {
   blok: {
     title: string;
+    subtitle: string;
     image_left: boolean;
     heading_order: boolean;
-    content: ContentNode;
+    content: React.ReactNode;
     image: {
       filename: string;
       name: string;
     };
+    button: Links[];
   };
 }
 
 const ImageBlock = ({ blok }: ImageBlockProps) => {
-  const { content, image, image_left, title, heading_order } = blok;
+  const { content, image, image_left, title, heading_order, subtitle, button } =
+    blok;
+  console.log(blok);
 
   return (
     <div className="lg:w-[100vw] mt-28 mb-10">
@@ -58,6 +45,13 @@ const ImageBlock = ({ blok }: ImageBlockProps) => {
         >
           <h2
             className={`${
+              heading_order ? "text-[20px] italic" : style.imageSubtitle
+            }`}
+          >
+            {subtitle}
+          </h2>
+          <h2
+            className={`${
               heading_order ? "text-[20px] italic" : style.imageTitle
             }`}
           >
@@ -73,6 +67,20 @@ const ImageBlock = ({ blok }: ImageBlockProps) => {
           >
             {render(content)}
           </div>
+          {button &&
+            button.length > 0 &&
+            button.map((el: Links, index: number) => {
+              return (
+                <div className="flex w-[70%]" key={index}>
+                  <Link
+                    className={style.contentButton}
+                    href={el.link.cached_url}
+                  >
+                    {el.title}
+                  </Link>
+                </div>
+              );
+            })}
         </div>
         <div
           className={`lg:w-[50%] flex flex-col ${
