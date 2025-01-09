@@ -65,9 +65,9 @@ const AboutBlock = ({ blok }: ImageBlockProps) => {
           )}
 
           {home_page && (
-            <div className={style.contentButton}>
-              <Link href={link.cached_url}>{linktitle}</Link>
-            </div>
+            <Link className={style.contentButton} href={link.cached_url}>
+              {linktitle}
+            </Link>
           )}
 
           <div
