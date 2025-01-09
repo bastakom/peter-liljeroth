@@ -1,5 +1,6 @@
 "use client";
 import { render } from "storyblok-rich-text-react-renderer";
+import Link from "next/link";
 import style from "./scss/about.module.scss";
 import { IoIosArrowDown } from "react-icons/io";
 import { MdKeyboardArrowUp } from "react-icons/md";
@@ -7,32 +8,19 @@ import useStore from "@/lib/store";
 
 import Image from "next/image";
 
-interface Mark {
-  type: string;
-}
-
-interface TextNode {
-  text: string;
-  type: "text";
-  marks?: Mark[];
-}
-
-interface ContentNode {
-  type: "heading" | "paragraph" | "hard_break";
-  attrs?: {
-    level?: number;
-  };
-  content?: TextNode[];
-  heading: string;
-}
-
 interface ImageBlockProps {
   blok: {
     heading: string;
     subtitle?: string;
+    linktitle?: string;
     about_page?: boolean;
-    content: ContentNode;
-    secondcontent: ContentNode;
+    img_left?: boolean;
+    home_page?: boolean;
+    link: {
+      cached_url: string;
+    };
+    content: React.ReactNode;
+    secondcontent: React.ReactNode;
     image: {
       filename: string;
       name: string;
@@ -41,13 +29,29 @@ interface ImageBlockProps {
 }
 
 const AboutBlock = ({ blok }: ImageBlockProps) => {
-  const { content, image, heading, subtitle, secondcontent, about_page } = blok;
+  console.log(blok);
+  const {
+    content,
+    image,
+    heading,
+    subtitle,
+    secondcontent,
+    about_page,
+    home_page,
+    linktitle,
+    link,
+    img_left,
+  } = blok;
   const { isDropdownAboutOpen, setDropdownAboutOpen } = useStore();
 
   return (
     <div className="lg:w-[100vw] mt-10 mb-10 lg:mt-28 lg:mb-20 lg:px-20 ">
-      <div className="lg:flex lg:gap-32 lg:w-[100%]">
-        <div className="px-4 lg:px-0 lg:w-[50%] flex flex-col lg:ml-16">
+      <div
+        className={`lg:flex lg:w-[100%] lg:gap-32 ${
+          img_left ? "lg:flex-row-reverse lg:gap-4" : ""
+        }`}
+      >
+        <div className="px-4 lg:px-0 lg:w-[50%] flex flex-col lg:ml-16 lg:justify-center">
           <h2 className={style.subtitle}>{subtitle}</h2>
           <h2 className="text-[28px] lg:text-[58px] pt-10 lg:pt-0 mb-10">
             {heading}
@@ -57,6 +61,12 @@ const AboutBlock = ({ blok }: ImageBlockProps) => {
           {isDropdownAboutOpen && (
             <div className={style.aboutSecondParagraph}>
               {render(secondcontent)}
+            </div>
+          )}
+
+          {home_page && (
+            <div className={style.contentButton}>
+              <Link href={link.cached_url}>{linktitle}</Link>
             </div>
           )}
 
@@ -85,7 +95,7 @@ const AboutBlock = ({ blok }: ImageBlockProps) => {
           {image.filename && (
             <Image
               src={image.filename}
-              width={728}
+              width={894}
               height={120}
               alt={image.name}
             />
