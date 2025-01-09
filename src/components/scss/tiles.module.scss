@@ -5,7 +5,7 @@
   
   .tilesSubtitle{
     font-size: 38px;
-    margin-bottom: 10px;
+    padding-bottom: 1rem;
   }
   
   .tilesParagraph{
@@ -21,6 +21,10 @@
     .tilesSubtitle{
         font-size: 58px;
         margin-bottom: 10px;
+      }
+
+      .container{
+        padding-top: 6rem;
       }
   }
   

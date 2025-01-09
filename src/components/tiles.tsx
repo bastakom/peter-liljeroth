@@ -2,27 +2,8 @@
 import { render } from "storyblok-rich-text-react-renderer";
 import style from "./scss/tiles.module.scss";
 
-interface Mark {
-  type: string;
-}
-
-interface TextNode {
-  text: string;
-  type: "text";
-  marks?: Mark[];
-}
-
-interface ContentNode {
-  type: "heading" | "paragraph" | "hard_break";
-  attrs?: {
-    level?: number;
-  };
-  content?: TextNode[];
-  heading: string;
-}
-
 interface Fields {
-  content: ContentNode[];
+  content: React.ReactNode;
 }
 
 interface TilesProps {
@@ -31,26 +12,24 @@ interface TilesProps {
     subtitle: string;
     component: string;
     fields: Fields[];
-    content: ContentNode;
+    content: React.ReactNode;
   };
 }
 
 const Tiles = ({ blok }: TilesProps) => {
-  console.log(blok);
-
   const { fields, component, heading, subtitle, content } = blok;
 
   return (
     <div className={style.container}>
       {component === "content_intro" && (
-        <div className="lg:w-[70%]">
+        <div className="lg:w-[55%]">
           <h1 className={style.tilesHeading}>{subtitle}</h1>
           <h2 className={style.tilesSubtitle}>{heading}</h2>
           <div className={style.tilesParagraph}>{render(content)}</div>
         </div>
       )}
 
-      <div className="lg:grid grid-cols-2 gap-12 mb-10">
+      <div className="lg:grid grid-cols-2 gap-12 mb-10 lg:mb-0">
         {component === "tilesblock" &&
           fields.map((el: any, index: number) => {
             return (
