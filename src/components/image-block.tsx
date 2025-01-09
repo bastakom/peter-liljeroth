@@ -41,7 +41,7 @@ const ImageBlock = ({ blok }: ImageBlockProps) => {
   return (
     <div className="lg:w-[100vw] mt-28 mb-10">
       <div
-        className={`flex w-[100%] ${
+        className={`flex w-[100%] justify-end gap-0 lg:gap-20 ${
           image_left
             ? "flex-col-reverse lg:flex-row-reverse"
             : " flex-col-reverse lg:flex-row items-start justify-end"
@@ -63,6 +63,7 @@ const ImageBlock = ({ blok }: ImageBlockProps) => {
           >
             {title}
           </h2>
+
           <div
             className={`${
               heading_order
@@ -81,7 +82,7 @@ const ImageBlock = ({ blok }: ImageBlockProps) => {
           {image.filename && (
             <Image
               src={image.filename}
-              width={728}
+              width={877}
               height={120}
               alt={image.name}
             />
