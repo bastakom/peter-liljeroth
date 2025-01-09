@@ -46,7 +46,7 @@ const AboutBlock = ({ blok }: ImageBlockProps) => {
 
   return (
     <div className="lg:w-[100vw] mt-10 mb-10 lg:mt-28 lg:mb-20 lg:px-20 ">
-      <div className="lg:flex lg:w-[100%]">
+      <div className="lg:flex lg:gap-32 lg:w-[100%]">
         <div className="px-4 lg:px-0 lg:w-[50%] flex flex-col lg:ml-16">
           <h2 className={style.subtitle}>{subtitle}</h2>
           <h2 className="text-[28px] lg:text-[58px] pt-10 lg:pt-0 mb-10">
