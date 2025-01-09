@@ -18,7 +18,7 @@ storyblokInit({
     CTA: CTABlock,
     contact_page: Contact,
     image_block: ImageBlock,
-    about: AboutBlock,
+    section_content: AboutBlock,
   },
   enableFallbackComponent: true,
 });

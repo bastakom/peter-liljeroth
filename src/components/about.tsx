@@ -30,6 +30,7 @@ interface ImageBlockProps {
   blok: {
     heading: string;
     subtitle?: string;
+    about_page?: boolean;
     content: ContentNode;
     secondcontent: ContentNode;
     image: {
@@ -40,14 +41,14 @@ interface ImageBlockProps {
 }
 
 const AboutBlock = ({ blok }: ImageBlockProps) => {
-  const { content, image, heading, subtitle, secondcontent } = blok;
+  const { content, image, heading, subtitle, secondcontent, about_page } = blok;
   const { isDropdownAboutOpen, setDropdownAboutOpen } = useStore();
 
   return (
     <div className="lg:w-[100vw] mt-10 mb-10 lg:mt-28 lg:mb-20 lg:px-20 ">
       <div className="lg:flex lg:w-[100%]">
         <div className="px-4 lg:px-0 lg:w-[50%] flex flex-col lg:ml-16">
-          <h2 className={style.imageSubtitle}>{subtitle}</h2>
+          <h2 className={style.subtitle}>{subtitle}</h2>
           <h2 className="text-[28px] lg:text-[58px] pt-10 lg:pt-0 mb-10">
             {heading}
           </h2>
@@ -60,7 +61,11 @@ const AboutBlock = ({ blok }: ImageBlockProps) => {
           )}
 
           <div
-            className="flex items-center justify-end cursor-pointer mt-4 mb-4 lg:mb-0 lg:mt-2"
+            className={`${
+              about_page
+                ? "flex items-center justify-end cursor-pointer mt-4 mb-4 lg:mb-0 lg:mt-2"
+                : "hidden"
+            }`}
             onClick={() => setDropdownAboutOpen(!isDropdownAboutOpen)}
           >
             {isDropdownAboutOpen ? (
