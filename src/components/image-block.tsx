@@ -23,8 +23,6 @@ interface ImageBlockProps {
 const ImageBlock = ({ blok }: ImageBlockProps) => {
   const { content, image, image_left, title, heading_order, subtitle, button } =
     blok;
-  console.log(blok);
-
   return (
     <div className="lg:w-[100vw] mt-28 mb-10">
       <div
