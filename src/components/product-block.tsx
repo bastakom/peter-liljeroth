@@ -14,14 +14,14 @@ export const ProductBlock = ({ blok }: any) => {
   };
 
   return (
-    <div className="lg:py-20 w-[90%] mx-auto">
-      <h2 className="text-[38px]">{blok.title}</h2>
-      <div className="grid lg:grid-cols-4 gap-14 mx-auto ">
+    <div className="lg:pt-20 w-[90%] mx-auto">
+      <h2 className="text-[38px] mb-10">{blok.title}</h2>
+      <div className="grid lg:grid-cols-4 gap-5 mx-auto ">
         {blok.products.map((item: any) => {
           return (
             <button
               key={item.uuid}
-              className="flex flex-col gap-5"
+              className="flex flex-col gap-5 bg-[#FAF9F6]"
               onClick={() => handleOpenModal(item.uuid)}
             >
               <div className="w-full h-[400px] relative">
@@ -32,7 +32,7 @@ export const ProductBlock = ({ blok }: any) => {
                   className="py-10 object-contain"
                 />
               </div>
-              <div className="flex flex-col gap-2 text-left">
+              <div className="flex flex-col text-left bg-[#fff] w-full pt-5">
                 <h4 className="text-[13px]">{item.content.sub_title}</h4>
                 <h2 className="text-[28px]">{item.name}</h2>
               </div>

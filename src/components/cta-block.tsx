@@ -31,7 +31,7 @@ export const CTABlock = ({ blok }: CTAblockProps) => {
       <div className="z-10 flex flex-col  items-center justify-center text-center max-w-[50%] gap-5 relative italic">
         {blok.three_images ? (
           <div className="py-44 flex flex-col items-center justify-center gap-5">
-            <span className="text-orange-400 text-[20px]">
+            <span className="text-white text-[20px]">
               {blok.sub_title}
             </span>
             <h3 className="text-white text-[40px]">{render(blok.title)}</h3>

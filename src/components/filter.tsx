@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { useParams, usePathname } from "next/navigation";
 
 export const Filter = ({ blok }: any) => {
   return (

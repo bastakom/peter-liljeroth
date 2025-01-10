@@ -24,7 +24,7 @@ export const ImageBlock = ({ blok }: ImageBlockProps) => {
   const { content, image, image_left, title, heading_order, subtitle, button } =
     blok;
   return (
-    <div className="mt-28 mb-10 w-[90%] mx-auto">
+    <div className="mt-28 mb-10 w-[100%] mx-auto">
       <div
         className={`flex justify-end gap-0 lg:gap-14 ${
           image_left
@@ -33,7 +33,7 @@ export const ImageBlock = ({ blok }: ImageBlockProps) => {
         }  ${heading_order ? "lg:px-20" : "lg:px-0"}`}
       >
         <div
-          className={`px-4 lg:px-0 lg:w-[50%] mt-20 flex flex-col ${
+          className={`px-4 lg:px-0 lg:w-[50%] mt-20 ml-20 flex flex-col ${
             heading_order
               ? "flex-col-reverse !items-start lg:w-[45%]"
               : "flex-col"

@@ -32,7 +32,11 @@ export const HeroBlock = ({
         <div className="flex gap-5 justify-center mt-10">
           {button.map((item: any) => {
             return (
-              <Link href="" key={item._uid} className="button">
+              <Link
+                href={item.link.cached_url}
+                key={item._uid}
+                className="button"
+              >
                 {item.title}
               </Link>
             );
@@ -42,7 +46,7 @@ export const HeroBlock = ({
       <div className="flex w-full">
         <div
           className={`relative ${
-            small_hero ? "w-full lg:min-h-[400px]" : "w-1/2 lg:min-h-[900px]"
+            small_hero ? "w-full lg:min-h-[180px]" : "w-1/2 lg:min-h-[900px]"
           } h-full`}
         >
           <Image
