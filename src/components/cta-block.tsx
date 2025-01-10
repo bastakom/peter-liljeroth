@@ -36,9 +36,10 @@ export const CTABlock = ({ blok }: CTAblockProps) => {
             </span>
             <h3 className="text-white text-[40px]">{render(blok.title)}</h3>
             <div>
-              {blok.buttons.map((button: LinkType) => {
+              {blok.buttons.map((button: LinkType, index: number) => {
                 return (
                   <Link
+                    key={index}
                     className="button text-white"
                     href={button.link.cached_url}
                   >
@@ -68,9 +69,9 @@ export const CTABlock = ({ blok }: CTAblockProps) => {
       {blok.three_images && (
         <div className="absolute top-0 w-full">
           <div className="grid grid-cols-3">
-            {blok.fields?.map((field: CTAGallery) => {
+            {blok.fields?.map((field: CTAGallery, index: number) => {
               return (
-                <div className="w-full relative h-[600px] ">
+                <div className="w-full relative h-[600px]" key={index}>
                   <Image
                     key={field.img.filename}
                     src={field.img.filename}

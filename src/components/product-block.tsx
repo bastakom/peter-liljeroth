@@ -39,7 +39,7 @@ export const ProductBlock = ({ blok }: any) => {
 
         {blok.products.map((item: any) =>
           open === item.uuid ? (
-            <div className="fixed top-0 w-full h-[100vh] flex justify-center items-center z-50 left-0 text-white">
+            <div className="fixed top-0 w-full h-[100vh] flex justify-center items-center z-50 left-0 text-white" key={item.uuid}>
               <div
                 className="opacity-60 bg-black w-full h-full"
                 onClick={() => handleOpenModal("")}
