@@ -40,15 +40,20 @@ export const FooterSection = ({ props }: FooterProps) => {
   } = props;
   const { isDropdownFooterOpen, setDropdownFooterOpen } = useStore();
   return (
-    <footer className={`footer-bg-color py-20 lg:mt-24 ${styles.footer}`}>
+    <footer
+      className={`footer-bg-color pt-10 pb-10 lg:py-20 lg:mt-24 ${styles.footer}`}
+    >
       <div className="flex flex-col lg:flex-row items-center  lg:items-start gap-10 lg:gap-40 p-6 lg:pt-20 pt-10 lg:p-0 lg:pl-16">
+        <div>
+          <Image src={logo.filename} height={188} width={214} alt="" />
+        </div>
         <div className="block lg:hidden">
-          <div className="flex text-[#FFFFFF] items-center justify-center ">
-            <h3 className="text-3xl mb-4 font-footer-heading">Länkar</h3>
+          <div className="flex text-[#FFFFFF] items-center">
+            <h3 className="font-dupincel mt-4 lg:mt-0 text-3xl mb-2">Länkar</h3>
 
             <IoIosArrowDown
               fontSize={30}
-              className={`mb-3 ml-3 transform ${
+              className={` mt-4 lg:mt-0 mb-3 ml-3 transform ${
                 isDropdownFooterOpen ? "rotate-180" : "rotate-0"
               } transition-transform`}
               onClick={() => setDropdownFooterOpen(!isDropdownFooterOpen)}
@@ -61,7 +66,7 @@ export const FooterSection = ({ props }: FooterProps) => {
                   <Link
                     href={el.link.cached_url}
                     key={el._uid}
-                    className="text-xl text-white font-footer-heading"
+                    className="text-xl text-white font-dupincel"
                   >
                     {el.title}
                   </Link>
@@ -70,14 +75,11 @@ export const FooterSection = ({ props }: FooterProps) => {
             </ul>
           )}
         </div>
-        <div>
-          <Image src={logo.filename} height={188} width={214} alt="" />
-        </div>
 
-        <div className="text-[#FFFFFF] mt-6  lg:ml-0 lg:mt-0 lg:flex flex-row gap-[12rem]">
+        <div className="text-[#FFFFFF] lg:ml-0 lg:mt-0 lg:flex flex-row gap-[12rem]">
           <div className="text-[#FFFFFF] flex flex-row gap-32  text-center lg:text-start ">
             <div className="mb-4 lg:ml-0">
-              <h3 className="text-3xl mb-4 font-footer-heading">
+              <h3 className="text-3xl mb-4 font-dupincel">
                 {props.business_title}
               </h3>
               <div className="text-[18px] lg:text-[22px] font-footer-content font-inter-thin">
@@ -117,13 +119,13 @@ export const FooterSection = ({ props }: FooterProps) => {
           </ul>
         </div>
       </div>
-      <div className="font-dupincel text-[#FFFFFF] flex flex-col text-center lg:text-start mb-2 lg:mb-0 lg:flex-row p-6 gap-5 lg:justify-end lg:p-0 lg:px-10 text-[18px] lg:text-[22px] mt-4 lg:mt-40 font-footer-heading">
+      <div className="font-dupincel text-[#FFFFFF] flex flex-col text-center lg:text-start mb-2 lg:mb-0 lg:flex-row p-6 gap-5 lg:justify-end lg:p-0 lg:px-10 text-[18px] lg:text-[22px] mt-4 lg:mt-40">
         <Link href={"#"}>Integritetspolicy</Link>
         <Link href={"#"}>Cookies</Link>
         <Link href={"#"}>Övrig information</Link>
       </div>
 
-      <div className="text-[#FFFFFF] justify-center pb-4 flex lg:justify-end lg:pb-0 lg:px-10 text-[18px] lg:text-[22px] mt-0 lg:mt-6 font-footer-heading">
+      <div className="text-[#FFFFFF] justify-center pb-4 flex lg:justify-end lg:pb-0 lg:px-10 text-[18px] lg:text-[22px] mt-0 lg:mt-6 font-dupincel ">
         <p>{copyright}</p>
       </div>
     </footer>
