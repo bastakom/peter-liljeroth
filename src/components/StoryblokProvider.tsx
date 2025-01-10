@@ -7,11 +7,10 @@ import { Teaser } from "./Teaser";
 import { HeroBlock } from "./hero-block";
 import { CTABlock } from "./cta-block";
 import Contact from "./contact";
+import ContentBlock from "./content-block";
 import ImageBlock from "./image-block";
 import AboutBlock from "./about";
-
 import Tiles from "./tiles";
-
 
 storyblokInit({
   components: {
@@ -20,6 +19,7 @@ storyblokInit({
     hero: HeroBlock,
     CTA: CTABlock,
     contact_page: Contact,
+    content_section: ContentBlock,
     image_block: ImageBlock,
     section_content: AboutBlock,
     tilesblock: Tiles,
