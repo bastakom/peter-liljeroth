@@ -55,7 +55,7 @@ export const FooterSection = ({ props }: FooterProps) => {
             />
           </div>
           {isDropdownFooterOpen && (
-            <ul className=" flex flex-col gap-4">
+            <ul className=" flex flex-col gap-4 lg:w-[336px]">
               {menu_footer.map((el: LinkType) => {
                 return (
                   <Link
@@ -74,7 +74,7 @@ export const FooterSection = ({ props }: FooterProps) => {
           <Image src={logo.filename} height={188} width={214} alt="" />
         </div>
 
-        <div className="text-[#FFFFFF] mt-6  lg:ml-0 lg:mt-0 lg:flex flex-row gap-32">
+        <div className="text-[#FFFFFF] mt-6  lg:ml-0 lg:mt-0 lg:flex flex-row gap-[12rem]">
           <div className="text-[#FFFFFF] flex flex-row gap-32  text-center lg:text-start ">
             <div className="mb-4 lg:ml-0">
               <h3 className="text-3xl mb-4 font-footer-heading">
@@ -86,7 +86,7 @@ export const FooterSection = ({ props }: FooterProps) => {
             </div>
           </div>
 
-          <div className="mt-6 lg:ml-0 lg:mt-0 text-center lg:text-start">
+          <div className="mt-6 lg:ml-0 lg:mt-0 text-center lg:text-start lg:w-[336px]">
             <h3 className="text-3xl mb-4 font-footer-heading">
               {contact_title}
             </h3>
@@ -104,7 +104,7 @@ export const FooterSection = ({ props }: FooterProps) => {
             </div>
           </div>
 
-          <ul className=" hidden lg:flex flex-col gap-[2.2rem]">
+          <ul className=" hidden lg:flex flex-col gap-[2.2rem] w-[336px]">
             {menu_footer.map((el: LinkType) => {
               return (
                 <Link
