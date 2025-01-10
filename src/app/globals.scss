@@ -2,24 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body {
+  scroll-behavior: smooth;
+}
+
 $primary: #fff;
 
 :root {
-  --footer-bg: #1D1711;
+  --footer-bg: #1d1711;
   --nav-bg: #1d1711;
 }
-
 
 .button {
   width: 200px;
   border: 1px solid white;
-  padding: 15px 20px;
+  padding: 10px 20px;
   display: block;
   border-radius: 4px;
 }
 
-.other-information{
-  h4{
+.other-information {
+  h4 {
     font-size: 20px;
   }
 }
@@ -32,13 +36,12 @@ $primary: #fff;
   background-color: var(--footer-bg);
 }
 
-
 .font-footer-heading {
-  font-family: "dupincel-variable",sans-serif;
-  font-variation-settings: 'wght' 400, 'opsz' 10;
+  font-family: "dupincel-variable", sans-serif;
+  font-variation-settings: "wght" 400, "opsz" 10;
 }
 
 .font-footer-content {
-  font-family: "inter-variable",sans-serif;
-  font-variation-settings: 'wght' 300, 'slnt' 0;
+  font-family: "inter-variable", sans-serif;
+  font-variation-settings: "wght" 300, "slnt" 0;
 }

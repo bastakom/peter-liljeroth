@@ -13,6 +13,7 @@ import { ImageBlock } from "./image-block";
 import { AboutBlock } from "./about";
 import { Tiles } from "./tiles";
 import { ProductBlock } from "./product-block";
+import { Filter } from "./filter";
 
 storyblokInit({
   components: {
@@ -28,6 +29,7 @@ storyblokInit({
     tilesblock: Tiles,
     content_intro: Tiles,
     product_block: ProductBlock,
+    filter: Filter,
   },
   enableFallbackComponent: true,
 });
