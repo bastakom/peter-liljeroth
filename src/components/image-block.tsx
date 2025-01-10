@@ -79,9 +79,9 @@ export const ImageBlock = ({ blok }: ImageBlockProps) => {
             })}
         </div>
         <div
-          className={`lg:w-[50%] flex flex-col h-[900px] relative ${
+          className={`lg:w-[50%] flex flex-col relative ${
             image_left ? "items-start" : " items-end"
-          }`}
+          } ${heading_order ? "h-[900px]" : " h-[600px]"}`}
         >
           {image.filename && (
             <Image
