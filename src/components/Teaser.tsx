@@ -1,10 +1,15 @@
 interface TeaserProps {
   blok: {
-    title: string;
+    headline: string;
     content: React.ReactNode;
   };
 }
 
 export const Teaser = ({ blok }: TeaserProps) => {
-  return <pre>{JSON.stringify(blok, null, 2)}</pre>;
+  const { headline } = blok;
+  return (
+    <div className="flex justify-center pt-16">
+      <h2 className="text-[22px]">{headline}</h2>
+    </div>
+  );
 };

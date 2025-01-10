@@ -89,7 +89,7 @@ export const Form = () => {
         {/* Meddelande */}
         <div className="flex items-center lg:w-[37.5vw] flex-col mb-6">
           <textarea
-            className="w-full border-black smallerFont md:mediumFont md:h-[216px] resize-none border-2 rounded py-2 px-4  focus:text-[black] focus:border-transparent focus:ring-2 focus:ring-gray-100 focus:outline-none"
+            className="w-full border-black smallerFont md:mediumFont md:h-[304px] resize-none border-2 rounded py-2 px-4  focus:text-[black] focus:border-transparent focus:ring-2 focus:ring-gray-100 focus:outline-none"
             id="message"
             name="message"
             rows={5}
