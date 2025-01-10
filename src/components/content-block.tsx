@@ -21,7 +21,7 @@ export const ContentBlock = ({ blok }: ContentBlock) => {
   return (
     <div className="p-4 lg:p-0 lg:w-full mt-10 mb-32 ">
       <div className="grid grid-cols-1 place-items-center ">
-        <div className="bg-black lg:w-[45%] flex justify-center">
+        <div className="lg:w-[45%] flex justify-center lg:pt-10">
           {logo && (
             <Image src={logo.filename} width={54} height={54} alt={logo.name} />
           )}
