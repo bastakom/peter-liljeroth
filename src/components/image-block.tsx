@@ -24,16 +24,16 @@ export const ImageBlock = ({ blok }: ImageBlockProps) => {
   const { content, image, image_left, title, heading_order, subtitle, button } =
     blok;
   return (
-    <div className="mt-28 mb-10 w-[100%] mx-auto">
+    <div className="lg:mt-28 mb-10 w-[100%] mx-auto px-5 lg:px-0">
       <div
-        className={`flex justify-end gap-0 lg:gap-14 ${
+        className={`flex justify-end gap-5 lg:gap-14 ${
           image_left
             ? "flex-col-reverse lg:flex-row-reverse"
-            : " flex-col-reverse lg:flex-row items-start justify-end"
+            : " flex-col-reverse lg:flex-row lg:items-start lg:justify-end"
         }  ${heading_order ? "lg:px-20" : "lg:px-0"}`}
       >
         <div
-          className={`px-4 lg:px-0 lg:w-[50%] mt-20 ml-20 flex flex-col ${
+          className={`px-4 lg:px-0 lg:w-[50%] lg:mt-20 lg:ml-20 flex flex-col ${
             heading_order
               ? "flex-col-reverse !items-start lg:w-[45%]"
               : "flex-col"
@@ -81,7 +81,7 @@ export const ImageBlock = ({ blok }: ImageBlockProps) => {
         <div
           className={`lg:w-[50%] flex flex-col relative ${
             image_left ? "items-start" : " items-end"
-          } ${heading_order ? "h-[900px]" : " h-[600px]"}`}
+          } ${heading_order ? "h-[500px] lg:h-[900px]" : " h-[300px] mt-20 lg:mt-0 lg:h-[600px]"}`}
         >
           {image.filename && (
             <Image

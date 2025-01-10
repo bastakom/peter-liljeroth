@@ -14,9 +14,9 @@ export const ProductBlock = ({ blok }: any) => {
   };
 
   return (
-    <div className="lg:pt-20 w-[90%] mx-auto">
+    <div className="lg:pt-20 lg:w-[90%] mx-auto px-5 lg:px-0">
       <h2 className="text-[38px] mb-10">{blok.title}</h2>
-      <div className="grid lg:grid-cols-4 gap-5 mx-auto ">
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-5 mx-auto ">
         {blok.products.map((item: any) => {
           return (
             <button
@@ -51,7 +51,7 @@ export const ProductBlock = ({ blok }: any) => {
                 onClick={() => handleOpenModal("")}
               />
               <div
-                className={`bg-white px-20 rounded-xl text-black flex flex-col justify-center h-[500px] lg:w-[50%] absolute ${
+                className={`bg-white lg:px-20 rounded-xl text-black flex flex-col justify-center mx-5 lg:mx-0 h-[90%] px-10 lg:h-[500px] lg:w-[50%] absolute ${
                   open === item.uuid && "animate-fade-up"
                 }`}
               >
