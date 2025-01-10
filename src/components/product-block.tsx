@@ -14,7 +14,7 @@ export const ProductBlock = ({ blok }: any) => {
   };
 
   return (
-    <div className="lg:pt-20 lg:w-[90%] mx-auto px-5 lg:px-0">
+    <div className="font-kis-normal lg:pt-20 lg:w-[90%] mx-auto px-5 lg:px-0">
       <h2 className="text-[38px] mb-10">{blok.title}</h2>
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-5 mx-auto ">
         {blok.products.map((item: any) => {

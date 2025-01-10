@@ -58,7 +58,7 @@ export const NavBar = ({ props }: NavBarProps) => {
             />
           </div>
 
-          <ul className="flex flex-col pl-8 lg:pl-16 pt-16 gap-3">
+          <ul className="font-kis-normal flex flex-col pl-8 lg:pl-16 pt-16 gap-3">
             {menu.map((el: LinkType, index: number) => {
               return (
                 <Link
@@ -99,7 +99,7 @@ export const NavBar = ({ props }: NavBarProps) => {
             })}
           </div>
 
-          <div className="px-10 lg:px-[4.5rem] mt-6 flex flex-col gap-2">
+          <div className="font-kis-normal px-10 lg:px-[4.5rem] mt-6 flex justify-between lg:flex-col gap-2">
             <Link href={`mailto:${mail}`} className="text-[#FFFFFF] text-xl">
               {mail}
             </Link>

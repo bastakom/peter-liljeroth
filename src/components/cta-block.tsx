@@ -48,11 +48,11 @@ export const CTABlock = ({ blok }: CTAblockProps) => {
             </div>
           </div>
         ) : (
-          <div className="py-44 flex flex-col items-center justify-center gap-5">
-            <h3 className="text-white text-[20px] lg:text-[40px]">{render(blok.title)}</h3>
-            <span className="text-orange-400 text-[20px]">
-              {blok.sub_title}
-            </span>
+          <div className="font-kis-italic py-44 flex flex-col items-center justify-center gap-5">
+            <h3 className="text-white text-[20px] lg:text-[40px] text-center">
+              {render(blok.title)}
+            </h3>
+            <span className="text-[#DDCA7D] text-[20px]">{blok.sub_title}</span>
           </div>
         )}
       </div>
@@ -69,13 +69,16 @@ export const CTABlock = ({ blok }: CTAblockProps) => {
           <div className="grid grid-cols-3">
             {blok.fields?.map((field: CTAGallery, index: number) => {
               return (
-                <div className="w-full relative h-[500px] lg:h-[600px]" key={index}>
+                <div
+                  className="w-full relative h-[500px] lg:h-[600px]"
+                  key={index}
+                >
                   <Image
                     key={field.img.filename}
                     src={field.img.filename}
                     alt={field.img.alt}
                     fill
-                    className="w-full h-full top-0 object-cover lg:object-contain"
+                    className="w-full h-full top-0 object-cover"
                   />
                 </div>
               );

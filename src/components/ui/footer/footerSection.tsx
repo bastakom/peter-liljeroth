@@ -80,17 +80,15 @@ export const FooterSection = ({ props }: FooterProps) => {
               <h3 className="text-3xl mb-4 font-footer-heading">
                 {props.business_title}
               </h3>
-              <div className="text-[18px] lg:text-[22px] font-footer-content">
+              <div className="text-[18px] lg:text-[22px] font-footer-content font-inter-thin">
                 {props && render(props.business_content)}
               </div>
             </div>
           </div>
 
           <div className="mt-6 lg:ml-0 lg:mt-0 text-center lg:text-start lg:w-[336px]">
-            <h3 className="text-3xl mb-4 font-footer-heading">
-              {contact_title}
-            </h3>
-            <div className="text-[18px] lg:text-[22px] mb-0 lg:mb-6 font-footer-content">
+            <h3 className="text-3xl mb-4 font-dupincel">{contact_title}</h3>
+            <div className="text-[18px] lg:text-[22px] mb-0 lg:mb-6 font-footer-content font-inter-thin">
               {phone_number}
             </div>
             <Link
@@ -110,7 +108,7 @@ export const FooterSection = ({ props }: FooterProps) => {
                 <Link
                   href={el.link.cached_url}
                   key={el._uid}
-                  className="text-3xl text-white font-footer-heading"
+                  className="text-3xl text-white font-dupincel"
                 >
                   {el.title}
                 </Link>
@@ -119,7 +117,7 @@ export const FooterSection = ({ props }: FooterProps) => {
           </ul>
         </div>
       </div>
-      <div className="text-[#FFFFFF] flex flex-col text-center lg:text-start mb-2 lg:mb-0 lg:flex-row p-6 gap-5 lg:justify-end lg:p-0 lg:px-10 text-[18px] lg:text-[22px] mt-4 lg:mt-40 font-footer-heading">
+      <div className="font-dupincel text-[#FFFFFF] flex flex-col text-center lg:text-start mb-2 lg:mb-0 lg:flex-row p-6 gap-5 lg:justify-end lg:p-0 lg:px-10 text-[18px] lg:text-[22px] mt-4 lg:mt-40 font-footer-heading">
         <Link href={"#"}>Integritetspolicy</Link>
         <Link href={"#"}>Cookies</Link>
         <Link href={"#"}>Övrig information</Link>

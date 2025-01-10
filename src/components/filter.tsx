@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export const Filter = ({ blok }: any) => {
   return (
-    <div className="text-center my-14">
+    <div className="font-kis-normal text-center my-14">
       <div className="lg:my-20 flex flex-col gap-5">
         <h2 className="text-[22px]">{blok.sub_title}</h2>
         <h4 className="text-[58px]">{blok.title}</h4>

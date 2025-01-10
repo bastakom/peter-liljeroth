@@ -48,7 +48,7 @@ export const ImageBlock = ({ blok }: ImageBlockProps) => {
           </h2>
           <h2
             className={`${
-              heading_order ? "text-[20px] italic" : style.imageTitle
+              heading_order ? "text-[20px] font-kis-italic" : style.imageTitle
             }`}
           >
             {title}
@@ -57,7 +57,7 @@ export const ImageBlock = ({ blok }: ImageBlockProps) => {
           <div
             className={`${
               heading_order
-                ? "text-[30px] lg:text-[40px] mb-10"
+                ? "font-kis-italic text-[30px] lg:w-[70%] lg:text-[40px] mb-10"
                 : style.imageParagraph
             }`}
           >
@@ -81,7 +81,11 @@ export const ImageBlock = ({ blok }: ImageBlockProps) => {
         <div
           className={`lg:w-[50%] flex flex-col relative ${
             image_left ? "items-start" : " items-end"
-          } ${heading_order ? "h-[500px] lg:h-[900px]" : " h-[300px] mt-20 lg:mt-0 lg:h-[600px]"}`}
+          } ${
+            heading_order
+              ? "h-[500px] lg:h-[900px]"
+              : " h-[300px] mt-20 lg:mt-0 lg:h-[600px]"
+          }`}
         >
           {image.filename && (
             <Image

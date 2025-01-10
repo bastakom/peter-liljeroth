@@ -27,10 +27,12 @@ export const ContentBlock = ({ blok }: ContentBlock) => {
           )}
         </div>
         <div className="lg:w-[45%] text-center flex flex-col gap-8">
-          <h2 className="text-[22px] mt-8">{subtitle}</h2>
-          <h2 className="text-[38px] lg:text-[58px]">{title}</h2>
+          <h2 className="font-kis-normal text-[22px] mt-8">{subtitle}</h2>
+          <h2 className="font-kis-normal text-[38px] lg:text-[58px]">
+            {title}
+          </h2>
 
-          <div> {render(content)}</div>
+          <div className="font-inter-normal"> {render(content)}</div>
         </div>
       </div>
     </div>
