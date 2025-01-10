@@ -10,6 +10,9 @@ import Contact from "./contact";
 import ImageBlock from "./image-block";
 import AboutBlock from "./about";
 
+import Tiles from "./tiles";
+
+
 storyblokInit({
   components: {
     Page: Page,
@@ -19,6 +22,8 @@ storyblokInit({
     contact_page: Contact,
     image_block: ImageBlock,
     section_content: AboutBlock,
+    tilesblock: Tiles,
+    content_intro: Tiles,
   },
   enableFallbackComponent: true,
 });
