@@ -1,4 +1,3 @@
-import { getAllSettings } from "@/app/data/get-settings";
 import { storyblokEditable } from "@storyblok/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -27,12 +26,18 @@ export const HeroBlock = ({
       {...storyblokEditable}
       className="relative flex justify-center items-center"
     >
-      <div className="absolute z-10 text-white text-center">
-        <h2 className="text-[58px] max-w-[850px]">{title}</h2>
-        <div className="flex gap-5 justify-center mt-10">
+      <div className="absolute z-10 flex flex-col justify-center items-center text-white text-center w-full">
+        <h2 className="text-[34px] text-center lg:text-[58px] max-w-[850px]">
+          {title}
+        </h2>
+        <div className="flex flex-col lg:flex-row gap-5 justify-center items-center mt-10">
           {button.map((item: any) => {
             return (
-              <Link href="" key={item._uid} className="button">
+              <Link
+                href={item.link.cached_url}
+                key={item._uid}
+                className="button"
+              >
                 {item.title}
               </Link>
             );
@@ -42,7 +47,9 @@ export const HeroBlock = ({
       <div className="flex w-full">
         <div
           className={`relative ${
-            small_hero ? "w-full lg:min-h-[400px]" : "w-1/2 lg:min-h-[900px]"
+            small_hero
+              ? "w-full lg:min-h-[180px]"
+              : "w-full lg:w-1/2 min-h-[900px]"
           } h-full`}
         >
           <Image
@@ -53,7 +60,7 @@ export const HeroBlock = ({
           />
         </div>
         {!small_hero && (
-          <div className="relative w-1/2 h-full lg:min-h-[900px]">
+          <div className="relative lg:w-1/2 h-full min-h-[900px]">
             <Image
               src={extra_img.filename}
               fill

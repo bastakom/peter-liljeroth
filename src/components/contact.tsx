@@ -35,10 +35,10 @@ export const Contact = ({ blok }: any) => {
     <div className="lg:mt-16 lg:mb-16">
       <h1 className="px-32 text-[22px] uppercase">{blok.heading}</h1>
 
-      <div className="w-[100vw] lg:h-[100vh] text-center lg:text-start px-6 lg:flex lg:px-32 mt-10 text-[18px]">
+      <div className="w-full lg:h-full text-center lg:text-start px-6 lg:flex lg:px-32 mt-10 text-[18px]">
         <div>
           <div className="lg:w-[80%] mb-10">{render(blok.info)}</div>
-          <div>{render(blok.business_information)}</div>
+          <div className="render-content">{render(blok.business_information)}</div>
         </div>
         <Form />
       </div>

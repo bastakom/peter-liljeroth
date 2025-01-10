@@ -44,7 +44,7 @@ export const NavBar = ({ props }: NavBarProps) => {
         />
 
         <nav
-          className={`nav-bg-color w-[100vw] h-[100vh] lg:w-[32vw] lg:h-[100vh] absolute -top-2 -right-5 lg:-top-2 lg:-right-5 transition-all duration-500 ${
+          className={`nav-bg-color w-[100vw] h-[100vh] lg:w-[35vw] lg:h-[100vh] absolute -top-2 -right-5 lg:-top-2 lg:-right-5 transition-all duration-500 ${
             open ? "translate-x-0" : "translate-x-full"
           }`}
         >
