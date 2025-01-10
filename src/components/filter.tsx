@@ -1,0 +1,31 @@
+"use client";
+
+import Link from "next/link";
+import { useParams, usePathname } from "next/navigation";
+
+export const Filter = ({ blok }: any) => {
+  const pathname = usePathname();
+
+  return (
+    <div className="text-center my-14">
+      <div className="lg:my-20 flex flex-col gap-5">
+        <h2 className="text-[22px]">{blok.sub_title}</h2>
+        <h4 className="text-[58px]">{blok.title}</h4>
+      </div>
+      <div className="flex gap-14 justify-center">
+        {blok.tags.map((item: any) => {
+          const slicedTag = item.tag.replace(/\s+/g, "").toLowerCase();
+          return (
+            <Link
+              href={`#${slicedTag}`}
+              className={`text-[28px]`}
+              key={slicedTag}
+            >
+              {item.tag}
+            </Link>
+          );
+        })}
+      </div>
+    </div>
+  );
+};

@@ -21,8 +21,9 @@ interface BannerImageProps {
 
 export const BannerImage = ({ blok }: any) => {
   const { img, title, subtitle, link, linktitle } = blok;
+
   return (
-    <div className="flex justify-center my-10">
+    <div className="flex justify-center my-10" id={blok.tag}>
       <div className="w-[90%] mx-auto h-[567px] relative">
         <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center z-10">
           <h2 className="text-white text-center text-[22px] mb-4">
