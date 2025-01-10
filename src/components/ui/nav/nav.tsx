@@ -30,12 +30,12 @@ export const NavBar = ({ props }: NavBarProps) => {
 
   return (
     <header
-      className={`fixed px-5 top-0 flex justify-center items-center w-full py-5 z-50`}
+      className={`absolute px-5 top-0 flex justify-center items-center w-full py-5 z-50`}
     >
-      <div className="flex justify-center text-white">
+      <Link href="/" className="flex justify-center text-white">
         <Image src={props.logo.filename} width={131} height={50} alt="" />
-      </div>
-      <div className="flex justify-end absolute right-5 top-2">
+      </Link>
+      <div className="flex justify-end fixed right-5 top-2">
         <TbMenu
           fontSize={80}
           color="white"
@@ -64,6 +64,7 @@ export const NavBar = ({ props }: NavBarProps) => {
                 <Link
                   href={el.link.cached_url}
                   key={index}
+                  onClick={() => setIsOpenMenu(false)}
                   className="text-[24px] lg:text-[40px] text-white"
                 >
                   {el.title}

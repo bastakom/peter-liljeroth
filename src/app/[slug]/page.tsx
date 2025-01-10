@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 async function fetchData(slug: string) {
   let sbParams = {
     version: "draft" as const,
+    resolve_relations: ["product_block.products"],
   };
 
   const client = getStoryblokApi();
@@ -28,6 +29,7 @@ const Page = async ({ params }: { params: { slug: string } }) => {
   const pathname = params.slug;
   const slugName = pathname === undefined ? `home` : pathname;
   const story = await fetchData(slugName);
+
   return <StoryblokStory story={story.data.data.story} />;
 };
 

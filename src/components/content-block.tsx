@@ -15,13 +15,11 @@ interface ContentBlock {
   };
 }
 
-const ContentBlock = ({ blok }: ContentBlock) => {
-  console.log(blok);
-
+export const ContentBlock = ({ blok }: ContentBlock) => {
   const { logo, subtitle, title, content, secondcontent } = blok;
 
   return (
-    <div className="p-4 lg:p-0 lg:w-[100vw] mt-10 mb-32 ">
+    <div className="p-4 lg:p-0 lg:w-full mt-10 mb-32 ">
       <div className="grid grid-cols-1 place-items-center ">
         <div className="bg-black lg:w-[45%] flex justify-center">
           {logo && (
@@ -38,5 +36,3 @@ const ContentBlock = ({ blok }: ContentBlock) => {
     </div>
   );
 };
-
-export default ContentBlock;
