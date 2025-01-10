@@ -40,7 +40,7 @@ export const FooterSection = ({ props }: FooterProps) => {
   } = props;
   const { isDropdownFooterOpen, setDropdownFooterOpen } = useStore();
   return (
-    <footer className={`footer-bg-color py-20 ${styles.footer}`}>
+    <footer className={`footer-bg-color py-20 lg:mt-24 ${styles.footer}`}>
       <div className="flex flex-col lg:flex-row items-center  lg:items-start gap-10 lg:gap-40 p-6 lg:pt-20 pt-10 lg:p-0 lg:pl-16">
         <div className="block lg:hidden">
           <div className="flex text-[#FFFFFF] items-center justify-center ">

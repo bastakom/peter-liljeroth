@@ -1,7 +1,7 @@
 "use client";
 import { render } from "storyblok-rich-text-react-renderer";
 import style from "./scss/image-block.module.scss";
-import { Links } from "../lib/interface.image-block";
+import { Links } from "@/lib/interface.image-block";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -20,13 +20,13 @@ interface ImageBlockProps {
   };
 }
 
-const ImageBlock = ({ blok }: ImageBlockProps) => {
+export const ImageBlock = ({ blok }: ImageBlockProps) => {
   const { content, image, image_left, title, heading_order, subtitle, button } =
     blok;
   return (
-    <div className="lg:w-[100vw] mt-28 mb-10">
+    <div className="mt-28 mb-10 w-[90%] mx-auto">
       <div
-        className={`flex w-[100%] justify-end gap-0 lg:gap-20 ${
+        className={`flex justify-end gap-0 lg:gap-14 ${
           image_left
             ? "flex-col-reverse lg:flex-row-reverse"
             : " flex-col-reverse lg:flex-row items-start justify-end"
@@ -34,8 +34,6 @@ const ImageBlock = ({ blok }: ImageBlockProps) => {
       >
         <div
           className={`px-4 lg:px-0 lg:w-[50%] mt-20 flex flex-col ${
-            image_left ? "lg:items-start" : "lg:items-end"
-          } ${
             heading_order
               ? "flex-col-reverse !items-start lg:w-[45%]"
               : "flex-col"
@@ -81,15 +79,15 @@ const ImageBlock = ({ blok }: ImageBlockProps) => {
             })}
         </div>
         <div
-          className={`lg:w-[50%] flex flex-col ${
+          className={`lg:w-[50%] flex flex-col h-[600px] relative ${
             image_left ? "items-start" : " items-end"
           }`}
         >
           {image.filename && (
             <Image
               src={image.filename}
-              width={877}
-              height={120}
+              fill
+              className="w-full"
               alt={image.name}
             />
           )}
@@ -98,5 +96,3 @@ const ImageBlock = ({ blok }: ImageBlockProps) => {
     </div>
   );
 };
-
-export default ImageBlock;

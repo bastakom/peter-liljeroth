@@ -6,12 +6,13 @@ import Page from "./Page";
 import { Teaser } from "./Teaser";
 import { HeroBlock } from "./hero-block";
 import { CTABlock } from "./cta-block";
-import Contact from "./contact";
-import BannerImage from "./banner-image";
-import ContentBlock from "./content-block";
-import ImageBlock from "./image-block";
-import AboutBlock from "./about";
-import Tiles from "./tiles";
+import { Contact } from "./contact";
+import { BannerImage } from "./banner-image";
+import { ContentBlock } from "./content-block";
+import { ImageBlock } from "./image-block";
+import { AboutBlock } from "./about";
+import { Tiles } from "./tiles";
+import { ProductBlock } from "./product-block";
 
 storyblokInit({
   components: {
@@ -26,6 +27,7 @@ storyblokInit({
     section_content: AboutBlock,
     tilesblock: Tiles,
     content_intro: Tiles,
+    product_block: ProductBlock,
   },
   enableFallbackComponent: true,
 });

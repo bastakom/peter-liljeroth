@@ -16,7 +16,7 @@ interface TilesProps {
   };
 }
 
-const Tiles = ({ blok }: TilesProps) => {
+export const Tiles = ({ blok }: TilesProps) => {
   const { fields, component, heading, subtitle, content } = blok;
 
   return (
@@ -44,5 +44,3 @@ const Tiles = ({ blok }: TilesProps) => {
     </div>
   );
 };
-
-export default Tiles;

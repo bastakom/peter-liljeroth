@@ -30,7 +30,7 @@ interface ContactProps {
 import { Form } from "@/components/Form/Form";
 import { render } from "storyblok-rich-text-react-renderer";
 
-const Contact = ({ blok }: any) => {
+export const Contact = ({ blok }: any) => {
   return (
     <div className="lg:mt-16 lg:mb-16">
       <h1 className="px-32 text-[22px] uppercase">{blok.heading}</h1>
@@ -45,5 +45,3 @@ const Contact = ({ blok }: any) => {
     </div>
   );
 };
-
-export default Contact;

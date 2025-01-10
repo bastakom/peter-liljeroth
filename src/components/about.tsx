@@ -1,4 +1,5 @@
 "use client";
+
 import { render } from "storyblok-rich-text-react-renderer";
 import Link from "next/link";
 import style from "./scss/about.module.scss";
@@ -28,8 +29,7 @@ interface ImageBlockProps {
   };
 }
 
-const AboutBlock = ({ blok }: ImageBlockProps) => {
-  console.log(blok);
+export const AboutBlock = ({ blok }: ImageBlockProps) => {
   const {
     content,
     image,
@@ -45,7 +45,7 @@ const AboutBlock = ({ blok }: ImageBlockProps) => {
   const { isDropdownAboutOpen, setDropdownAboutOpen } = useStore();
 
   return (
-    <div className="lg:w-[100vw] mt-10 mb-10 lg:mt-28 lg:mb-20 lg:px-20 ">
+    <div className="lg:w-full mt-10 mb-10 lg:mt-28 lg:mb-20 lg:px-20 ">
       <div
         className={`lg:flex lg:w-[100%] lg:gap-32 ${
           img_left ? "lg:flex-row-reverse lg:gap-4" : ""
@@ -105,5 +105,3 @@ const AboutBlock = ({ blok }: ImageBlockProps) => {
     </div>
   );
 };
-
-export default AboutBlock;
