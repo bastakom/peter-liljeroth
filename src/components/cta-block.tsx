@@ -48,7 +48,7 @@ export const CTABlock = ({ blok }: CTAblockProps) => {
             </div>
           </div>
         ) : (
-          <div className="font-kis-italic py-44 flex flex-col items-center justify-center gap-5">
+          <div className="py-44 flex flex-col items-center justify-center gap-5">
             <h3 className="text-white text-[20px] lg:text-[40px] text-center">
               {render(blok.title)}
             </h3>

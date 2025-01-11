@@ -25,7 +25,7 @@ export const BannerImage = ({ blok }: any) => {
   return (
     <div className="flex justify-center my-10" id={blok.tag}>
       <div className="w-[90%] mx-auto h-[567px] relative">
-        <div className="font-kis-normal absolute top-0 left-0 w-full h-full flex flex-col -mt-14 justify-center items-center z-10">
+        <div className="absolute top-0 left-0 w-full h-full flex flex-col -mt-14 justify-center items-center z-10">
           <h2 className="text-white text-center text-[22px] mb-4">
             {subtitle}
           </h2>

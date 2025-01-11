@@ -4,8 +4,6 @@
 
 @import url("https://p.typekit.net/p.css?s=1&k=fje8ejp&ht=tk&f=56274.56275&a=88801068&app=typekit&e=css");
 @import url("https://fonts.adobe.com/fonts/dupincel-variable?vf-font-size=100&vf-font=DupincelVF-Roman&vf-axes=opsz%2C10%2Cwght%2C300");
-
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;1,14..32,300&family=Quicksand:wght@300..700&family=Sacramento&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 @font-face {
@@ -31,16 +29,16 @@
 }
 
 
+h2, h1, a .font-kis-normal {
+  font-family: "adobe-kis-variable", sans-serif;
+  
+}
 
-.font-kis-normal {
+h3, .font-kis-italic {
   font-family: "adobe-kis-variable", sans-serif;
 }
 
-.font-kis-italic {
-  font-family: "adobe-kis-variable", sans-serif;
-}
-
-.font-inter-normal {
+.p, label, input {
   font-family: "Inter", sans-serif;
   font-weight: 300;
   font-style: normal;

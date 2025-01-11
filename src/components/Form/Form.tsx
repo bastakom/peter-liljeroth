@@ -46,7 +46,7 @@ export const Form = () => {
   return (
     <div id="contact-form" className="p-[2rem] md:p-[0rem]">
       <form onSubmit={handleSubmit}>
-        <div className="font-inter-normal flex items-center lg:w-[37.5vw] flex-col mb-6">
+        <div className="flex items-center lg:w-[37.5vw] flex-col mb-6">
           <input
             className="w-full border-2 border-black smallerFont lg:mediumFont rounded py-2 px-4 focus:border-transparent focus:ring-2 focus:ring-gray-100 focus:outline-none"
             id="name"

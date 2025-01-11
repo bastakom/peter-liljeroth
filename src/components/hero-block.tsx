@@ -26,7 +26,7 @@ export const HeroBlock = ({
       {...storyblokEditable}
       className="relative flex justify-center items-center"
     >
-      <div className="font-kis-normal absolute z-10 flex flex-col justify-center items-center text-white text-center w-full">
+      <div className="absolute z-10 flex flex-col justify-center items-center text-white text-center w-full">
         <h2 className="text-[34px] text-center lg:text-[58px] max-w-[850px]">
           {title}
         </h2>

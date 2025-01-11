@@ -8,7 +8,7 @@ interface TeaserProps {
 export const Teaser = ({ blok }: TeaserProps) => {
   const { headline } = blok;
   return (
-    <div className="font-kis-normal flex justify-center pt-16">
+    <div className="flex justify-center pt-16">
       <h2 className="text-[22px]">{headline}</h2>
     </div>
   );
