@@ -80,12 +80,12 @@ export const AboutBlock = ({ blok }: ImageBlockProps) => {
           >
             {isDropdownAboutOpen ? (
               <>
-                <div className="text-[18px]">Läs mindre</div>
+                <div className="font-kis-normal text-[18px]">Läs mindre</div>
                 <MdKeyboardArrowUp fontSize={20} className="ml-2" />
               </>
             ) : (
               <>
-                <div className="text-[18px]">Läs mer</div>
+                <div className="font-kis-normal text-[18px]">Läs mer</div>
                 <IoIosArrowDown fontSize={20} className="ml-2" />
               </>
             )}

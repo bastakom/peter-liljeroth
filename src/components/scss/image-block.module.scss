@@ -6,6 +6,7 @@
 .imageTitle {
   font-size: 48px;
   margin-bottom: 1rem;
+  font-family: "adobe-kis-variable", sans-serif;
   @media screen and (max-width: 1024px) {
     font-size: 30px;
   }
@@ -16,6 +17,7 @@
   margin-bottom: 1rem;
   text-align: start;
   width: 70%;
+  font-family: "adobe-kis-variable", sans-serif;
 }
 
 .contentButton {
@@ -28,7 +30,12 @@
   cursor: pointer;
   font-size: 21px;
   text-align: center;
+   font-family: "adobe-kis-variable", sans-serif;
 }
 .imageParagraph {
   font-size: 18px;
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  
 }

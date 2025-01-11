@@ -107,7 +107,7 @@ export const Form = () => {
             checked={isChecked}
             onChange={handleCheckBox}
           />
-          <label htmlFor="checkbox">
+          <label htmlFor="checkbox" className="font-inter-normal text-[16px]">
             Jag godkänner att ni hanterar mina personuppgifter enligt ovan.{" "}
             <br></br>
             Läs mer om hur vi behandlar dina personuppgifter här
@@ -117,7 +117,7 @@ export const Form = () => {
         <div className="flex justify-center lg:justify-start lg:w-[37.5vw] ">
           <button
             type="submit"
-            className={`border-2 border-black lg:w-[30%] font-bold py-3 px-6 focus:outline-none ${
+            className={`font-kis-normal text-[21px] border-2 border-black lg:w-[30%] font-bold py-3 px-6 focus:outline-none ${
               !isChecked ? "opacity-50 cursor-not-allowed" : "opacity-100"
             }`}
             disabled={!isChecked}

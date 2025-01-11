@@ -33,12 +33,16 @@ import { render } from "storyblok-rich-text-react-renderer";
 export const Contact = ({ blok }: any) => {
   return (
     <div className="lg:mt-16 lg:mb-16">
-      <h1 className="px-32 text-[22px] uppercase">{blok.heading}</h1>
+      <h1 className=" px-32 text-[22px] uppercase">{blok.heading}</h1>
 
       <div className="w-full lg:h-full text-center lg:text-start px-6 lg:flex lg:px-32 mt-10 text-[18px]">
         <div>
-          <div className="lg:w-[80%] mb-10">{render(blok.info)}</div>
-          <div className="render-content">{render(blok.business_information)}</div>
+          <div className="font-inter-thin lg:w-[80%] mb-10">
+            {render(blok.info)}
+          </div>
+          <div className="font-dupincel render-content">
+            {render(blok.business_information)}
+          </div>
         </div>
         <Form />
       </div>
