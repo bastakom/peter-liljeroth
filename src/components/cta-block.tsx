@@ -75,7 +75,7 @@ export const CTABlock = ({ blok }: CTAblockProps) => {
                     src={field.img.filename}
                     alt={field.img.alt}
                     fill
-                    className="w-full h-full top-0 object-cover lg:object-contain"
+                    className="w-full h-full top-0 object-cover lg:object-cover"
                   />
                 </div>
               );
