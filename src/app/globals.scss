@@ -29,13 +29,17 @@
 }
 
 
-h2, h1, a .font-kis-normal {
+h2, h1, h4, a, link .font-kis-normal {
   font-family: "adobe-kis-variable", sans-serif;
+  font-style: normal;
+  font-weight: 300;
   
 }
 
-h3, .font-kis-italic {
+h3, span, .font-kis-italic {
   font-family: "adobe-kis-variable", sans-serif;
+  font-style: italic;
+  font-weight: 300;
 }
 
 .p, label, input {

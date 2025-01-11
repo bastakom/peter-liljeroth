@@ -5,6 +5,7 @@ import Link from "next/link";
 import useStore from "@/lib/store";
 import { render } from "storyblok-rich-text-react-renderer";
 import { LinkType, SomeLink } from "@/lib/interface";
+import style from "@/components/scss/footer.module.scss";
 
 import styles from "@/components/scss/footer.module.scss";
 import { Socials } from "@/components/ui/socials/socials";
@@ -49,7 +50,7 @@ export const FooterSection = ({ props }: FooterProps) => {
         </div>
         <div className="block lg:hidden">
           <div className="flex text-[#FFFFFF] items-center">
-            <h3 className="font-dupincel mt-4 lg:mt-0 text-3xl mb-2">Länkar</h3>
+            <h2 className="font-dupincel mt-4 lg:mt-0 text-3xl mb-2">Länkar</h2>
 
             <IoIosArrowDown
               fontSize={30}
@@ -79,23 +80,23 @@ export const FooterSection = ({ props }: FooterProps) => {
         <div className="text-[#FFFFFF] lg:ml-0 lg:mt-0 lg:flex flex-row gap-[12rem]">
           <div className="text-[#FFFFFF] flex flex-row gap-32  text-center lg:text-start ">
             <div className="mb-4 lg:ml-0">
-              <h3 className="text-3xl mb-4 font-dupincel">
+              <h2 className="text-3xl mb-4 font-dupincel">
                 {props.business_title}
-              </h3>
-              <div className="text-[18px] lg:text-[22px] font-footer-content font-inter-thin">
+              </h2>
+              <div className={style.footerContent}>
                 {props && render(props.business_content)}
               </div>
             </div>
           </div>
 
           <div className="mt-6 lg:ml-0 lg:mt-0 text-center lg:text-start lg:w-[336px]">
-            <h3 className="text-3xl mb-4 font-dupincel">{contact_title}</h3>
-            <div className="text-[18px] lg:text-[22px] mb-0 lg:mb-6 font-footer-content font-inter-thin">
+            <h2 className="text-3xl mb-4 font-dupincel">{contact_title}</h2>
+            <div className="footerContent text-[18px] lg:text-[22px] mb-0 lg:mb-6">
               {phone_number}
             </div>
             <Link
               href={`mailto:${mail}`}
-              className="text-[18px] lg:text-[22px] font-footer-content"
+              className="text-[18px] lg:text-[22px]"
             >
               {mail}
             </Link>
@@ -125,8 +126,8 @@ export const FooterSection = ({ props }: FooterProps) => {
         <Link href={"#"}>Övrig information</Link>
       </div>
 
-      <div className="text-[#FFFFFF] justify-center pb-4 flex lg:justify-end lg:pb-0 lg:px-10 text-[18px] lg:text-[22px] mt-0 lg:mt-6 font-dupincel ">
-        <p>{copyright}</p>
+      <div className="text-[#FFFFFF] justify-center pb-4 flex lg:justify-end lg:pb-0 lg:px-10 text-[18px] lg:text-[22px] mt-0 lg:mt-6">
+        <p className="font-kis-inter">{copyright}</p>
       </div>
     </footer>
   );
