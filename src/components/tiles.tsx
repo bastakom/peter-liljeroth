@@ -80,11 +80,6 @@ export const Tiles = ({ blok }: TilesProps) => {
             return (
               <div
                 key={index}
-
-                className={`${
-                  oneColumn ? "text-center lg:w-[60%]" : "lg:w-[90%]"
-                }`}
-
                 className={`${oneColumn ? "lg:w-[60%]" : "lg:w-[90%]"}`}
                 ref={(el) => {
                   refs.current[index] = el;
