@@ -35,7 +35,10 @@ export const CTABlock = ({ blok }: CTAblockProps) => {
       <div className="z-10 flex flex-col items-center justify-center text-center max-w-[70%] lg:max-w-[50%] gap-5 relative">
         {blok.three_images ? (
           <div className="py-32 lg:py-44 flex flex-col items-center justify-center gap-5">
-            <div className="text-white text-[20px]">{blok.sub_title}</div>
+            <h4 className="text-white text-[22px] tracking-[0.66px]">
+              {blok.sub_title}
+            </h4>
+
             <h2 className="text-white text-[30px] lg:text-[40px]">
               {render(blok.title)}
             </h2>
@@ -44,7 +47,7 @@ export const CTABlock = ({ blok }: CTAblockProps) => {
                 return (
                   <Link
                     key={index}
-                    className="button text-white lg:mt-8"
+                    className="button text-white lg:mt-8 cursor-pointer"
                     href={button.link.cached_url}
                   >
                     {button.title}
@@ -54,11 +57,13 @@ export const CTABlock = ({ blok }: CTAblockProps) => {
             </div>
           </div>
         ) : (
-          <div className="py-44 flex flex-col items-center justify-center gap-5">
+          <div className="py-44 flex flex-col items-center justify-center gap-5 lg:w-[70%]">
+            <span className="text-[#DDCA7D] text-[20px] font-kis-italic">
+              {blok.sub_title}
+            </span>
             <h3 className="text-white text-[20px] lg:text-[40px] text-center">
               {render(blok.title)}
             </h3>
-            <span className="text-[#DDCA7D] text-[20px]">{blok.sub_title}</span>
           </div>
         )}
       </div>

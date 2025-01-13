@@ -27,8 +27,13 @@ interface NavBarProps {
 
 export const NavBar = ({ props }: NavBarProps) => {
   const { open, setIsOpenMenu } = useStore();
+  const [headerActive, setHeaderActive] = useState(0);
   const { menu, some_links, mail, phone_number } = props;
   const [scroll, setScroll] = useState(false);
+
+  const handleMenuClick = (id: any) => {
+    setHeaderActive(id);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -85,10 +90,18 @@ export const NavBar = ({ props }: NavBarProps) => {
                 <Link
                   href={el.link.cached_url}
                   key={index}
-                  onClick={() => setIsOpenMenu(false)}
-                  className="text-[24px] lg:text-[40px] text-white"
+                  onClick={() => {
+                    handleMenuClick(index);
+                    setIsOpenMenu(false);
+                  }}
+                  className="text-[24px] lg:text-[40px] text-white relative"
                 >
                   {el.title}
+                  <span
+                    className={`absolute bottom-[-2px] left-0 w-[30%] h-[4px] bg-[#16110D] ${
+                      headerActive === index ? "" : "hidden"
+                    }`}
+                  />
                 </Link>
               );
             })}

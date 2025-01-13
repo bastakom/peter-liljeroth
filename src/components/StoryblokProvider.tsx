@@ -14,6 +14,7 @@ import { AboutBlock } from "./about";
 import { Tiles } from "./tiles";
 import { ProductBlock } from "./product-block";
 import { Filter } from "./filter";
+import OtherInformation from "./ovrig-information";
 
 storyblokInit({
   components: {
@@ -30,6 +31,7 @@ storyblokInit({
     content_intro: Tiles,
     product_block: ProductBlock,
     filter: Filter,
+    other_information: OtherInformation,
   },
   enableFallbackComponent: true,
 });

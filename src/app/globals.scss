@@ -1,5 +1,6 @@
-@import url("https://use.typekit.net/fje8ejp.css");
+@import url("https://use.typekit.net/zej2cyi.css");
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;1,14..32,300&family=Quicksand:wght@300..700&family=Sacramento&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
 
 @tailwind base;
 @tailwind components;
@@ -16,14 +17,17 @@ link .font-kis-normal {
 }
 
 h3,
-span,
 .font-kis-italic {
   font-family: "adobe-kis-variable", sans-serif;
   font-style: italic;
   font-weight: 300;
 }
 
-.p,
+h2{
+  line-height: 1.2;
+  letter-spacing: 0.66px;
+}
+.p, u, 
 label,
 input {
   font-family: "Inter", sans-serif;
@@ -36,6 +40,8 @@ input {
   font-weight: 100;
   font-style: normal;
 }
+
+
 
 .font-dupincel {
   font-family: "dupincel-variable", sans-serif;
@@ -58,7 +64,15 @@ $primary: #fff;
   h2 {
     font-size: 40px;
     margin-bottom: 20px;
+    font-family: "dupincel-variable", sans-serif;
   }
+
+  p{
+    font-family: "Inter", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+  }
+ 
 }
 
 .button {
@@ -68,6 +82,7 @@ $primary: #fff;
   display: block;
   border-radius: 4px;
   font-size: 21px;
+  cursor: pointer;
   transition: all 0.3s ease-in-out;
   &:hover {
     background-color: white;

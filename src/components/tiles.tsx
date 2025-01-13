@@ -9,6 +9,7 @@ interface Fields {
   content: React.ReactNode;
   readmore_content: React.ReactNode;
   styling_smycken?: boolean;
+  margin?: boolean;
   one_column?: boolean;
   heading?: string;
   show_read_more?: boolean;
@@ -44,6 +45,7 @@ export const Tiles = ({ blok }: TilesProps) => {
   };
   const oneColumn = fields?.some((field) => field.one_column === true);
   const hasStylingSmycken = fields?.some((field) => field.styling_smycken);
+  const margin = fields?.some((field) => field.margin);
 
   return (
     <div
@@ -52,7 +54,8 @@ export const Tiles = ({ blok }: TilesProps) => {
           ? "mt-0 w-[90%] mx-auto"
           : style.container
       }
-  `}
+    ${margin ? "lg:pl-16" : ""}
+    `}
     >
       {component === "content_intro" && (
         <div className="lg:w-[55%]">
@@ -66,8 +69,8 @@ export const Tiles = ({ blok }: TilesProps) => {
         className={`${
           oneColumn
             ? "flex justify-center"
-            : "lg:grid grid-cols-2 gap-12 mb-10 lg:mb-0"
-        }`}
+            : "lg:grid grid-cols-2 gap-12 lg:-mt- mb-10 lg:mb-32"
+        } `}
       >
         {component === "tilesblock" &&
           fields?.map((el, index) => {
@@ -76,7 +79,7 @@ export const Tiles = ({ blok }: TilesProps) => {
             return (
               <div
                 key={index}
-                className={`${oneColumn ? "lg:w-[45%]" : "lg:w-[90%]"}`}
+                className={`${oneColumn ? "lg:w-[60%]" : "lg:w-[90%]"}`}
                 ref={(el) => {
                   refs.current[index] = el;
                 }}
@@ -96,7 +99,9 @@ export const Tiles = ({ blok }: TilesProps) => {
                   {el.heading}
                 </h1>
                 <div
-                  className={`${oneColumn ? "text-center" : "text-start"}`}
+                  className={`text-[18px] ${
+                    oneColumn ? "text-center" : "text-start"
+                  }`}
                   style={{ fontFamily: '"Inter", sans-serif' }}
                 >
                   {render(el.content)}

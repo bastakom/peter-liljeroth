@@ -111,7 +111,7 @@ export const Form = () => {
           />
           <label htmlFor="checkbox" className="text-left text-[16px]">
             <span className="font-inter-thin">
-              Jag godkänner att ni hanterar mina personuppgifter enligt ovan. 
+              Jag godkänner att ni hanterar mina personuppgifter enligt ovan.
             </span>
             <Link
               href="/integritetspolicy"
@@ -125,7 +125,7 @@ export const Form = () => {
         <div className="flex w-full ">
           <button
             type="submit"
-            className={`font-kis-normal text-[21px] border-2 border-black w-full lg:w-[30%] font-bold py-3 px-6 focus:outline-none ${
+            className={`font-kis-normal text-[21px] border-2 border-black w-full lg:w-[30%] font-bold py-3 px-6 focus:outline-none hover:bg-[#1D1711] hover:text-white ${
               !isChecked ? "opacity-50 cursor-not-allowed" : "opacity-100"
             }`}
             disabled={!isChecked}

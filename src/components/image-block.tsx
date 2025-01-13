@@ -33,83 +33,85 @@ export const ImageBlock = ({ blok }: ImageBlockProps) => {
     padding,
   } = blok;
   return (
-    <div
-      className={`lg:mt-28 mb-10 mx-auto px-5 lg:px-0 ${
-        padding ? "container py-10" : " w-full"
-      }`}
-    >
+    <div className="lg:mt-28 mb-10 w-[100%] mx-auto px-5 lg:px-0 lg:mb-40">
       <div
-        className={`flex justify-end gap-5 lg:gap-14 ${
-          image_left
-            ? "flex-col-reverse lg:flex-row-reverse"
-            : " flex-col-reverse lg:flex-row lg:items-start lg:justify-end"
-        }  ${heading_order ? "lg:px-20" : "lg:px-0"}`}
+        className={`lg:mt-28 mb-10 mx-auto px-5 lg:px-0 lg:mb-40 ${
+          padding ? "container py-10" : " w-full"
+        }`}
       >
         <div
-          className={`lg:px-0 lg:w-[50%] lg:mt-20 ${
-            !padding && "lg:ml-20"
-          } flex flex-col ${
-            heading_order
-              ? "flex-col-reverse !items-start lg:w-[45%]"
-              : "flex-col"
-          }`}
+          className={`flex justify-end gap-5 lg:gap-14 ${
+            image_left
+              ? "flex-col-reverse lg:flex-row-reverse"
+              : " flex-col-reverse lg:flex-row lg:items-start lg:justify-end"
+          }  ${heading_order ? "lg:px-20" : "lg:px-0"}`}
         >
-          <h2
-            className={`${
-              heading_order ? "text-[20px] italic" : style.imageSubtitle
-            }`}
-          >
-            {subtitle}
-          </h2>
-          <h2
-            className={`${
-              heading_order ? "text-[20px] font-kis-italic" : style.imageTitle
-            }`}
-          >
-            {title}
-          </h2>
-
           <div
-            className={`${
+            className={`lg:px-0 lg:w-[50%] lg:mt-20 ${
+              !padding && "lg:ml-20"
+            } flex flex-col ${
               heading_order
-                ? "font-kis-italic text-[30px] lg:w-[70%] lg:text-[40px] mb-10"
-                : style.imageParagraph
+                ? "flex-col-reverse !items-start lg:w-[45%]"
+                : "flex-col"
             }`}
           >
-            {render(content)}
+            <h2
+              className={`${
+                heading_order ? "text-[20px] italic" : style.imageSubtitle
+              }`}
+            >
+              {subtitle}
+            </h2>
+            <h2
+              className={`${
+                heading_order ? "text-[20px] font-kis-italic" : style.imageTitle
+              }`}
+            >
+              {title}
+            </h2>
+
+            <div
+              className={`${
+                heading_order
+                  ? "font-kis-italic text-[30px] text-[#2B2219] lg:w-[70%] lg:text-[40px] mb-10"
+                  : style.imageParagraph
+              }`}
+            >
+              {render(content)}
+            </div>
+            {button &&
+              button.length > 0 &&
+              button.map((el: Links, index: number) => {
+                return (
+                  <div className="flex w-[70%] text-[#1d1711]" key={index}>
+                    <Link
+                      className={style.contentButton}
+                      href={el.link.cached_url}
+                    >
+                      {el.title}
+                    </Link>
+                  </div>
+                );
+              })}
           </div>
-          {button &&
-            button.length > 0 &&
-            button.map((el: Links, index: number) => {
-              return (
-                <div className="flex w-[70%] text-[#1d1711]" key={index}>
-                  <Link
-                    className={style.contentButton}
-                    href={el.link.cached_url}
-                  >
-                    {el.title}
-                  </Link>
-                </div>
-              );
-            })}
-        </div>
-        <div
-          className={`lg:w-[50%] flex flex-col relative ${
-            image_left ? "items-start" : " items-end"
-          } ${
-            heading_order
-              ? "h-[500px] lg:h-[900px]"
-              : " h-[300px] mt-4 lg:mt-0 lg:h-[600px]"
-          }`}
-        >
-          {image.filename && (
-            <Image
-              src={image.filename}
-              fill
-              className="w-full"
-              alt={image.name}
-            />
-          )}
+          <div
+            className={`lg:w-[50%] flex flex-col relative ${
+              image_left ? "items-start" : " items-end"
+            } ${
+              heading_order
+                ? "h-[500px] lg:h-[900px]"
+                : " h-[300px] mt-4 lg:mt-0 lg:h-[600px]"
+            }`}
+          >
+            {image.filename && (
+              <Image
+                src={image.filename}
+                fill
+                className="w-full"
+                alt={image.name}
+              />
+            )}
+          </div>
         </div>
       </div>
     </div>
