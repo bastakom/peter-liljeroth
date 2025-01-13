@@ -24,7 +24,7 @@ export const ImageBlock = ({ blok }: ImageBlockProps) => {
   const { content, image, image_left, title, heading_order, subtitle, button } =
     blok;
   return (
-    <div className="lg:mt-28 mb-10 w-[100%] mx-auto px-5 lg:px-0">
+    <div className="lg:mt-28 mb-10 w-[100%] mx-auto px-5 lg:px-0 lg:mb-40">
       <div
         className={`flex justify-end gap-5 lg:gap-14 ${
           image_left
@@ -33,7 +33,7 @@ export const ImageBlock = ({ blok }: ImageBlockProps) => {
         }  ${heading_order ? "lg:px-20" : "lg:px-0"}`}
       >
         <div
-          className={`px-4 lg:px-0 lg:w-[50%] lg:mt-20 lg:ml-20 flex flex-col ${
+          className={`lg:px-0 lg:w-[50%] lg:mt-20 lg:ml-20 flex flex-col ${
             heading_order
               ? "flex-col-reverse !items-start lg:w-[45%]"
               : "flex-col"
@@ -57,7 +57,7 @@ export const ImageBlock = ({ blok }: ImageBlockProps) => {
           <div
             className={`${
               heading_order
-                ? "font-kis-italic text-[30px] lg:w-[70%] lg:text-[40px] mb-10"
+                ? "font-kis-italic text-[30px] text-[#2B2219] lg:w-[70%] lg:text-[40px] mb-10"
                 : style.imageParagraph
             }`}
           >
@@ -84,7 +84,7 @@ export const ImageBlock = ({ blok }: ImageBlockProps) => {
           } ${
             heading_order
               ? "h-[500px] lg:h-[900px]"
-              : " h-[300px] mt-20 lg:mt-0 lg:h-[600px]"
+              : " h-[300px] mt-4 lg:mt-0 lg:h-[600px]"
           }`}
         >
           {image.filename && (

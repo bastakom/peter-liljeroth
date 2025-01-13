@@ -1,4 +1,6 @@
 "use client";
+
+import Link from "next/link";
 import { useState } from "react";
 
 export const Form = () => {
@@ -44,9 +46,9 @@ export const Form = () => {
   };
 
   return (
-    <div id="contact-form" className="p-[2rem] md:p-[0rem]">
+    <div id="contact-form container mx-auto">
       <form onSubmit={handleSubmit}>
-        <div className="flex items-center lg:w-[37.5vw] flex-col mb-6">
+        <div className="flex items-center lg:w-[full] flex-col mb-6 mt-10 lg:mt-0">
           <input
             className="w-full border-2 border-black smallerFont lg:mediumFont rounded py-2 px-4 focus:border-transparent focus:ring-2 focus:ring-gray-100 focus:outline-none"
             id="name"
@@ -60,7 +62,7 @@ export const Form = () => {
         </div>
 
         {/* E-post */}
-        <div className="flex items-center lg:w-[37.5vw] flex-col mb-6">
+        <div className="flex items-center flex-col mb-6">
           <input
             className="w-full border-2 border-black smallerFont lg:mediumFont rounded py-2 px-4 focus:border-transparent focus:ring-2 focus:ring-gray-100 focus:outline-none"
             id="email"
@@ -74,7 +76,7 @@ export const Form = () => {
         </div>
 
         {/* Telefon */}
-        <div className="flex items-center lg:w-[37.5vw] flex-col mb-6">
+        <div className="flex items-center flex-col mb-6">
           <input
             className="w-full border-2 border-black smallerFont lg:mediumFont rounded py-2 px-4 focus:border-transparent focus:ring-2 focus:ring-gray-100 focus:outline-none"
             id="number"
@@ -87,7 +89,7 @@ export const Form = () => {
         </div>
 
         {/* Meddelande */}
-        <div className="flex items-center lg:w-[37.5vw] flex-col mb-6">
+        <div className="flex items-center flex-col mb-6">
           <textarea
             className="w-full border-black smallerFont md:mediumFont md:h-[304px] resize-none border-2 rounded py-2 px-4  focus:text-[black] focus:border-transparent focus:ring-2 focus:ring-gray-100 focus:outline-none"
             id="message"
@@ -107,17 +109,23 @@ export const Form = () => {
             checked={isChecked}
             onChange={handleCheckBox}
           />
-          <label htmlFor="checkbox" className="font-inter-normal text-[16px]">
-            Jag godkänner att ni hanterar mina personuppgifter enligt ovan.{" "}
-            <br></br>
-            Läs mer om hur vi behandlar dina personuppgifter här
+          <label htmlFor="checkbox" className="text-left text-[16px]">
+            <span className="font-inter-thin">
+              Jag godkänner att ni hanterar mina personuppgifter enligt ovan.
+            </span>
+            <Link
+              href="/integritetspolicy"
+              className="font-inter-thin text-[16px] ml-[3px]"
+            >
+              Läs mer om hur vi behandlar dina personuppgifter här
+            </Link>
           </label>
         </div>
         {/* Submit knapp */}
-        <div className="flex justify-center lg:justify-start lg:w-[37.5vw] ">
+        <div className="flex w-full ">
           <button
             type="submit"
-            className={`font-kis-normal text-[21px] border-2 border-black lg:w-[30%] font-bold py-3 px-6 focus:outline-none ${
+            className={`font-kis-normal text-[21px] border-2 border-black w-full lg:w-[30%] font-bold py-3 px-6 focus:outline-none hover:bg-[#1D1711] hover:text-white ${
               !isChecked ? "opacity-50 cursor-not-allowed" : "opacity-100"
             }`}
             disabled={!isChecked}
