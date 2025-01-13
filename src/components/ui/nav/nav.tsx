@@ -94,14 +94,13 @@ export const NavBar = ({ props }: NavBarProps) => {
                     handleMenuClick(index);
                     setIsOpenMenu(false);
                   }}
-                  className="text-[24px] lg:text-[40px] text-white relative"
+                  className={`text-[24px] lg:text-[40px] text-white relative ${
+                    headerActive === index
+                      ? "underline decoration-[#16110D] underline-offset-8"
+                      : ""
+                  }`}
                 >
                   {el.title}
-                  <span
-                    className={`absolute bottom-[-2px] left-0 w-[30%] h-[4px] bg-[#16110D] ${
-                      headerActive === index ? "" : "hidden"
-                    }`}
-                  />
                 </Link>
               );
             })}
