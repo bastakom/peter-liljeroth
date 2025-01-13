@@ -33,7 +33,7 @@ export const ImageBlock = ({ blok }: ImageBlockProps) => {
         }  ${heading_order ? "lg:px-20" : "lg:px-0"}`}
       >
         <div
-          className={`px-4 lg:px-0 lg:w-[50%] lg:mt-20 lg:ml-20 flex flex-col ${
+          className={`lg:px-0 lg:w-[50%] lg:mt-20 lg:ml-20 flex flex-col ${
             heading_order
               ? "flex-col-reverse !items-start lg:w-[45%]"
               : "flex-col"
@@ -84,7 +84,7 @@ export const ImageBlock = ({ blok }: ImageBlockProps) => {
           } ${
             heading_order
               ? "h-[500px] lg:h-[900px]"
-              : " h-[300px] mt-20 lg:mt-0 lg:h-[600px]"
+              : " h-[300px] mt-4 lg:mt-0 lg:h-[600px]"
           }`}
         >
           {image.filename && (

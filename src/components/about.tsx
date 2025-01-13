@@ -45,17 +45,20 @@ export const AboutBlock = ({ blok }: ImageBlockProps) => {
   const { isDropdownAboutOpen, setDropdownAboutOpen } = useStore();
 
   return (
-    <div className="lg:w-full mt-10 mb-10 lg:mt-28 lg:mb-20 lg:px-20 ">
+    <div className="lg:w-full  mb-10 lg:mt-28 lg:mb-20 lg:px-20 ">
       <div
         className={`lg:flex lg:w-[100%] lg:gap-32 ${
           img_left ? "lg:flex-row-reverse lg:gap-4" : ""
         }`}
       >
-        <div className="px-4 lg:px-0 lg:w-[50%] flex flex-col lg:ml-16 lg:justify-center">
+        <div className="px-4 lg:px-0 lg:w-[50%] flex flex-col lg:ml-16 lg:justify-center mb-5">
           <h2 className={style.subtitle}>{subtitle}</h2>
-          <h2 className="text-[28px] lg:text-[58px] pt-10 lg:pt-0 mb-10">
-            {heading}
-          </h2>
+          {heading && (
+            <h2 className="text-[28px] lg:text-[58px] lg:pt-0 mb-10">
+              {heading}
+            </h2>
+          )}
+
           <div className={style.aboutParagraph}>{render(content)}</div>
 
           {isDropdownAboutOpen && (

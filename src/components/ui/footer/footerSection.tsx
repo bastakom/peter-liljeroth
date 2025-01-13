@@ -42,7 +42,7 @@ export const FooterSection = ({ props }: FooterProps) => {
   const { isDropdownFooterOpen, setDropdownFooterOpen } = useStore();
   return (
     <footer
-      className={`footer-bg-color pt-10 pb-10 lg:py-20 lg:mt-24 ${styles.footer}`}
+      className={`footer-bg-color pt-10 pb-10 lg:py-20 mt-14 lg:mt-24 ${styles.footer}`}
     >
       <div className="flex flex-col lg:flex-row items-center  lg:items-start gap-10 lg:gap-40 p-6 lg:pt-20 pt-10 lg:p-0 lg:pl-16">
         <div>
@@ -61,7 +61,7 @@ export const FooterSection = ({ props }: FooterProps) => {
             />
           </div>
           {isDropdownFooterOpen && (
-            <ul className=" flex flex-col gap-4 lg:w-[336px]">
+            <ul className=" flex flex-col gap-4 lg:w-[336px] text-center lg:text-start">
               {menu_footer.map((el: LinkType) => {
                 return (
                   <Link
@@ -105,7 +105,7 @@ export const FooterSection = ({ props }: FooterProps) => {
             </div>
           </div>
 
-          <ul className=" hidden lg:flex flex-col gap-[2.2rem] w-[336px]">
+          <ul className="hidden lg:flex flex-col gap-[2.2rem] w-[336px]">
             {menu_footer.map((el: LinkType) => {
               return (
                 <Link
@@ -121,9 +121,9 @@ export const FooterSection = ({ props }: FooterProps) => {
         </div>
       </div>
       <div className="font-dupincel text-[#FFFFFF] flex flex-col text-center lg:text-start mb-2 lg:mb-0 lg:flex-row p-6 gap-5 lg:justify-end lg:p-0 lg:px-10 text-[18px] lg:text-[22px] mt-4 lg:mt-40">
-        <Link href={"#"}>Integritetspolicy</Link>
-        <Link href={"#"}>Cookies</Link>
-        <Link href={"#"}>Övrig information</Link>
+        <Link href={"/integritetspolicy"}>Integritetspolicy</Link>
+        <Link href={"/cookies"}>Cookies</Link>
+        <Link href={"/oevriga-tjaenster"}>Övrig information</Link>
       </div>
 
       <div className="text-[#FFFFFF] justify-center pb-4 flex lg:justify-end lg:pb-0 lg:px-10 text-[18px] lg:text-[22px] mt-0 lg:mt-6">

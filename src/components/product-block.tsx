@@ -24,7 +24,7 @@ export const ProductBlock = ({ blok }: any) => {
               className="flex flex-col gap-5 bg-[#FAF9F6]"
               onClick={() => handleOpenModal(item.uuid)}
             >
-              <div className="w-full h-[400px] relative">
+              <div className="w-full h-[240px] lg:h-[400px] relative">
                 <Image
                   src={item.content.image?.filename || ""}
                   fill
@@ -43,7 +43,7 @@ export const ProductBlock = ({ blok }: any) => {
         {blok.products.map((item: any) =>
           open === item.uuid ? (
             <div
-              className="fixed top-0 w-full h-[100vh] flex justify-center items-center z-50 left-0 text-white"
+              className="fixed top-0 w-full h-full lg:h-[100vh] flex justify-center items-center z-50 left-0 text-white"
               key={item.uuid}
             >
               <div
@@ -51,7 +51,7 @@ export const ProductBlock = ({ blok }: any) => {
                 onClick={() => handleOpenModal("")}
               />
               <div
-                className={`bg-white lg:px-20 rounded-xl text-black flex flex-col justify-center mx-5 lg:mx-0 h-[90%] px-10 lg:h-[500px] lg:w-[50%] absolute ${
+                className={`bg-white lg:px-20 rounded-xl text-black flex flex-col justify-center m-5 lg:m-0 h-[90%] px-10 lg:h-[500px] lg:w-[50%] absolute ${
                   open === item.uuid && "animate-fade-up"
                 }`}
               >
@@ -67,7 +67,7 @@ export const ProductBlock = ({ blok }: any) => {
                     width={300}
                     height={300}
                     alt=""
-                    className="py-10 object-contain"
+                    className="py-5 lg:py-10 object-contain h-[200px] lg:h-[300px] "
                   />
                   <div className="flex flex-col justify-center gap-5">
                     <div>

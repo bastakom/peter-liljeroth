@@ -9,6 +9,7 @@ import { IoCloseOutline } from "react-icons/io5";
 import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 import { LinkType, SomeLink } from "@/lib/interface";
+import { useEffect, useState } from "react";
 
 interface NavBarProps {
   props: {
@@ -27,6 +28,23 @@ interface NavBarProps {
 export const NavBar = ({ props }: NavBarProps) => {
   const { open, setIsOpenMenu } = useStore();
   const { menu, some_links, mail, phone_number } = props;
+  const [scroll, setScroll] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 40) {
+        setScroll(true);
+      } else {
+        setScroll(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <header
@@ -35,11 +53,14 @@ export const NavBar = ({ props }: NavBarProps) => {
       <Link href="/" className="flex justify-center text-white">
         <Image src={props.logo.filename} width={131} height={50} alt="" />
       </Link>
-      <div className="flex justify-end fixed right-5 top-2">
+      <div className={`flex justify-end fixed right-5 top-2`}>
         <TbMenu
-          fontSize={80}
           color="white"
-          className={` ${open ? "hidden" : "block"} cursor-pointer`}
+          className={` ${
+            open ? "hidden" : "block"
+          } cursor-pointer text-[60px] mt-5 lg:mt-0 lg:text-[80px] ${
+            scroll ? "bg-black rounded-full p-2" : "bg-transparent"
+          }   `}
           onClick={() => setIsOpenMenu(true)}
         />
 

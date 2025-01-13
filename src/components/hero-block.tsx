@@ -48,7 +48,7 @@ export const HeroBlock = ({
         <div
           className={`relative ${
             small_hero
-              ? "w-full min-h-[180px]"
+              ? "w-full min-h-[180px] mb-14 lg:mb-0"
               : "w-full lg:w-1/2 min-h-[900px]"
           } h-full`}
         >
