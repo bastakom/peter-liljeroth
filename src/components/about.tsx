@@ -45,7 +45,7 @@ export const AboutBlock = ({ blok }: ImageBlockProps) => {
   const { isDropdownAboutOpen, setDropdownAboutOpen } = useStore();
 
   return (
-    <div className="lg:w-full  mb-10 lg:mt-28 lg:mb-20 lg:px-20 ">
+    <div className="lg:w-full mb-10 lg:mt-28 lg:mb-20 lg:px-20 ">
       <div
         className={`lg:flex lg:w-[100%] lg:gap-32 ${
           img_left ? "lg:flex-row-reverse lg:gap-4" : ""
@@ -76,7 +76,7 @@ export const AboutBlock = ({ blok }: ImageBlockProps) => {
           <div
             className={`${
               about_page
-                ? "flex items-center justify-end cursor-pointer mt-4 mb-4 lg:mb-0 lg:mt-2"
+                ? "flex items-center justify-start cursor-pointer mt-6 mb-4 lg:mb-0 lg:mt-2"
                 : "hidden"
             }`}
             onClick={() => setDropdownAboutOpen(!isDropdownAboutOpen)}

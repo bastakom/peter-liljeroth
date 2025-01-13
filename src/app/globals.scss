@@ -68,6 +68,11 @@ $primary: #fff;
   display: block;
   border-radius: 4px;
   font-size: 21px;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background-color: white;
+    color: #1d1711;
+  }
 }
 
 .other-information {
