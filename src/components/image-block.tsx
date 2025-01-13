@@ -11,6 +11,7 @@ interface ImageBlockProps {
     subtitle: string;
     image_left: boolean;
     heading_order: boolean;
+    padding: boolean;
     content: React.ReactNode;
     image: {
       filename: string;
@@ -21,10 +22,25 @@ interface ImageBlockProps {
 }
 
 export const ImageBlock = ({ blok }: ImageBlockProps) => {
-  const { content, image, image_left, title, heading_order, subtitle, button } =
-    blok;
+  const {
+    content,
+    image,
+    image_left,
+    title,
+    heading_order,
+    subtitle,
+    button,
+    padding,
+  } = blok;
   return (
+
     <div className="lg:mt-28 mb-10 w-[100%] mx-auto px-5 lg:px-0 lg:mb-40">
+
+    <div
+      className={`lg:mt-28 mb-10 mx-auto px-5 lg:px-0 lg:mb-40 ${
+        padding ? "container py-10" : " w-full"
+      }`}
+    >
       <div
         className={`flex justify-end gap-5 lg:gap-14 ${
           image_left
@@ -33,7 +49,9 @@ export const ImageBlock = ({ blok }: ImageBlockProps) => {
         }  ${heading_order ? "lg:px-20" : "lg:px-0"}`}
       >
         <div
-          className={`lg:px-0 lg:w-[50%] lg:mt-20 lg:ml-20 flex flex-col ${
+          className={`lg:px-0 lg:w-[50%] lg:mt-20 ${
+            !padding && "lg:ml-20"
+          } flex flex-col ${
             heading_order
               ? "flex-col-reverse !items-start lg:w-[45%]"
               : "flex-col"
@@ -67,7 +85,7 @@ export const ImageBlock = ({ blok }: ImageBlockProps) => {
             button.length > 0 &&
             button.map((el: Links, index: number) => {
               return (
-                <div className="flex w-[70%]" key={index}>
+                <div className="flex w-[70%] text-[#1d1711]" key={index}>
                   <Link
                     className={style.contentButton}
                     href={el.link.cached_url}

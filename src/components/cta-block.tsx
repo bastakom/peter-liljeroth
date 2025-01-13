@@ -38,6 +38,7 @@ export const CTABlock = ({ blok }: CTAblockProps) => {
             <h4 className="text-white text-[22px] tracking-[0.66px]">
               {blok.sub_title}
             </h4>
+
             <h2 className="text-white text-[30px] lg:text-[40px]">
               {render(blok.title)}
             </h2>

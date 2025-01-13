@@ -63,8 +63,8 @@ export const NavBar = ({ props }: NavBarProps) => {
           color="white"
           className={` ${
             open ? "hidden" : "block"
-          } cursor-pointer text-[60px] mt-5 lg:mt-0 lg:text-[80px] ${
-            scroll ? "bg-black rounded-full p-2" : "bg-transparent"
+          } cursor-pointer text-[60px] mt-5 lg:mt-0 lg:text-[80px] transition-all ease-linear ${
+            scroll ? "bg-[#1d1411] rounded-full p-2" : "bg-transparent"
           }   `}
           onClick={() => setIsOpenMenu(true)}
         />

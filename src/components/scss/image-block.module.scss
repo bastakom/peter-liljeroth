@@ -23,21 +23,25 @@
 .contentButton {
   margin-top: 2rem;
   width: 200px;
-  border: 1px solid grey;
+  border: 1px solid #1d1711;
   padding: 10px 20px;
   display: block;
   border-radius: 4px;
   cursor: pointer;
   font-size: 21px;
   text-align: center;
-   font-family: "adobe-kis-variable", sans-serif;
+  font-family: "adobe-kis-variable", sans-serif;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background-color: #1d1711;
+    color: #fff;
+  }
 }
 .imageParagraph {
   font-size: 18px;
   font-family: "Inter", sans-serif;
   font-weight: 300;
   font-style: normal;
-  
 }
 
 
