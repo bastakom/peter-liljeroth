@@ -10,8 +10,6 @@ export const Filter = ({ blok }: any) => {
     setHeaderActive(id);
   };
 
-  console.log(headerActive);
-
   return (
     <div className="text-center my-14">
       <div className="lg:my-20 flex flex-col gap-5">

@@ -28,7 +28,6 @@ interface TilesProps {
 
 export const Tiles = ({ blok }: TilesProps) => {
   const { fields, component, heading, subtitle, content } = blok;
-  console.log(blok);
 
   const [openDropdowns, setOpenDropdowns] = useState<boolean[]>(
     fields?.map(() => false) || []
