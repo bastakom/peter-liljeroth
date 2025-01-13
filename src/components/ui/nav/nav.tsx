@@ -10,6 +10,7 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 import { LinkType, SomeLink } from "@/lib/interface";
 import { useEffect, useState } from "react";
+import { Menu } from "lucide-react";
 
 interface NavBarProps {
   props: {
@@ -59,7 +60,10 @@ export const NavBar = ({ props }: NavBarProps) => {
         <Image src={props.logo.filename} width={131} height={50} alt="" />
       </Link>
       <div className={`flex justify-end fixed right-5 top-2`}>
-        <TbMenu
+        
+        <Menu
+          size={80}
+          strokeWidth={0.5}
           color="white"
           className={` ${
             open ? "hidden" : "block"
