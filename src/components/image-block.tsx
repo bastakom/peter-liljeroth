@@ -74,7 +74,7 @@ export const ImageBlock = ({ blok }: ImageBlockProps) => {
               heading_order
                 ? "font-kis-italic text-[30px] lg:w-[70%] lg:text-[40px] mb-10"
                 : style.imageParagraph
-            }`}
+            } ${!padding && image_left && "pr-10"}`}
           >
             {render(content)}
           </div>
