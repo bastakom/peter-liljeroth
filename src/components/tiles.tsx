@@ -3,7 +3,7 @@ import { render } from "storyblok-rich-text-react-renderer";
 import style from "./scss/tiles.module.scss";
 import { MdKeyboardArrowUp } from "react-icons/md";
 import { IoIosArrowDown } from "react-icons/io";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 interface Fields {
   content: React.ReactNode;
@@ -31,13 +31,17 @@ export const Tiles = ({ blok }: TilesProps) => {
   const [openDropdowns, setOpenDropdowns] = useState<boolean[]>(
     fields?.map(() => false) || []
   );
+  const refs = useRef<(HTMLDivElement | null)[]>([]);
 
-  const toggleDropdown = (index: number) => {
-    const newDropdowns = [...openDropdowns];
-    newDropdowns[index] = !newDropdowns[index];
-    setOpenDropdowns(newDropdowns);
+  const toggleDropdown = (index: any) => {
+    setOpenDropdowns((prev) => {
+      const newOpenDropdowns = { ...prev, [index]: !prev[index] };
+      if (newOpenDropdowns[index] === false) {
+        refs.current[index]?.scrollIntoView();
+      }
+      return newOpenDropdowns;
+    });
   };
-
   const oneColumn = fields?.some((field) => field.one_column === true);
   const hasStylingSmycken = fields?.some((field) => field.styling_smycken);
 
@@ -73,6 +77,9 @@ export const Tiles = ({ blok }: TilesProps) => {
               <div
                 key={index}
                 className={`${oneColumn ? "lg:w-[45%]" : "lg:w-[90%]"}`}
+                ref={(el) => {
+                  refs.current[index] = el;
+                }}
               >
                 <hr
                   className={`${
@@ -95,31 +102,27 @@ export const Tiles = ({ blok }: TilesProps) => {
                   {render(el.content)}
 
                   {openDropdowns[index] && (
-                    <div className="mt-6">{render(el.readmore_content)}</div>
+                    <div className={`mt-6`}>{render(el.readmore_content)}</div>
                   )}
                 </div>
 
                 {showMoreForThisField && (
-                  <div
-                    className="flex items-center justify-end cursor-pointer mt-4 mb-4 lg:mb-0 lg:mt-2"
+                  <button
+                    className={`flex items-center ${
+                      oneColumn ? "justify-center w-full" : "text-left"
+                    } cursor-pointer mt-4 mb-4 lg:mb-0 lg:mt-4`}
                     onClick={() => toggleDropdown(index)}
                   >
-                    {openDropdowns[index] ? (
-                      <>
-                        <div className="font-kis-normal text-[18px]">
-                          Läs mindre
-                        </div>
-                        <MdKeyboardArrowUp fontSize={20} className="ml-2" />
-                      </>
-                    ) : (
-                      <>
-                        <div className="font-kis-normal text-[18px]">
-                          Läs mer
-                        </div>
-                        <IoIosArrowDown fontSize={20} className="ml-2" />
-                      </>
-                    )}
-                  </div>
+                    <div className="font-inter-thin text-[18px]">
+                      {openDropdowns[index] ? "Läs mindre" : "Läs mer"}
+                    </div>
+                    <MdKeyboardArrowUp
+                      fontSize={20}
+                      className={`ml-2 ${
+                        openDropdowns[index] ? "rotate-0" : "rotate-180"
+                      } `}
+                    />
+                  </button>
                 )}
               </div>
             );

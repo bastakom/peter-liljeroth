@@ -27,12 +27,18 @@ interface CTAblockProps {
 }
 export const CTABlock = ({ blok }: CTAblockProps) => {
   return (
-    <div className={`relative mx-auto w-full flex justify-center h-[60vh] lg:mb-0 lg:h-full px-5 lg:px-0 ${blok.three_images ? "mb-20" : "mb-0"}`}>
+    <div
+      className={`relative mx-auto w-full flex justify-center h-[60vh] lg:mb-0 lg:h-full px-5 lg:px-0 ${
+        blok.three_images ? "mb-20" : "mb-0"
+      }`}
+    >
       <div className="z-10 flex flex-col items-center justify-center text-center max-w-[70%] lg:max-w-[50%] gap-5 relative">
         {blok.three_images ? (
           <div className="py-32 lg:py-44 flex flex-col items-center justify-center gap-5">
             <div className="text-white text-[20px]">{blok.sub_title}</div>
-            <h2 className="text-white text-[30px] lg:text-[40px]">{render(blok.title)}</h2>
+            <h2 className="text-white text-[30px] lg:text-[40px]">
+              {render(blok.title)}
+            </h2>
             <div>
               {blok.buttons.map((button: LinkType, index: number) => {
                 return (
