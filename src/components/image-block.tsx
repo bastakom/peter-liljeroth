@@ -11,6 +11,7 @@ interface ImageBlockProps {
     subtitle: string;
     image_left: boolean;
     heading_order: boolean;
+    small_text: boolean;
     padding: boolean;
     content: React.ReactNode;
     image: {
@@ -31,7 +32,9 @@ export const ImageBlock = ({ blok }: ImageBlockProps) => {
     subtitle,
     button,
     padding,
+    small_text,
   } = blok;
+
   return (
     <div
       className={`lg:mt-28 mb-10 mx-auto px-5 lg:px-0 ${
@@ -54,17 +57,21 @@ export const ImageBlock = ({ blok }: ImageBlockProps) => {
               : "flex-col"
           }`}
         >
+          {subtitle && (
+            <h2
+              className={`${
+                heading_order ? "text-[20px] italic" : style.imageSubtitle
+              }`}
+            >
+              {subtitle}
+            </h2>
+          )}
           <h2
             className={`${
-              heading_order ? "text-[20px] italic" : style.imageSubtitle
-            }`}
-          >
-            {subtitle}
-          </h2>
-          <h2
-            className={`${
-              heading_order ? "text-[20px] font-kis-italic" : style.imageTitle
-            }`}
+              !small_text && heading_order
+                ? "text-[20px] font-kis-italic"
+                : style.imageTitle
+            } ${small_text && "text-[100px]"} `}
           >
             {title}
           </h2>
