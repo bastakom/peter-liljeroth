@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import style from "../scss/contact.module.scss";
 
 export const Form = () => {
   const [formData, setFormData] = useState({
@@ -50,7 +51,7 @@ export const Form = () => {
       <form onSubmit={handleSubmit}>
         <div className="flex items-center lg:w-[full] flex-col mb-6 mt-10 lg:mt-0">
           <input
-            className="w-full border-2 border-black smallerFont lg:mediumFont rounded py-2 px-4 focus:border-transparent focus:ring-2 focus:ring-gray-100 focus:outline-none"
+            className="w-full border-[1px] border-black smallerFont lg:mediumFont rounded py-2 px-4 focus:border-transparent focus:ring-2 focus:ring-gray-100 focus:outline-none"
             id="name"
             name="name"
             type="text"
@@ -64,7 +65,7 @@ export const Form = () => {
         {/* E-post */}
         <div className="flex items-center flex-col mb-6">
           <input
-            className="w-full border-2 border-black smallerFont lg:mediumFont rounded py-2 px-4 focus:border-transparent focus:ring-2 focus:ring-gray-100 focus:outline-none"
+            className="w-full border-[1px] border-black smallerFont lg:mediumFont rounded py-2 px-4 focus:border-transparent focus:ring-2 focus:ring-gray-100 focus:outline-none"
             id="email"
             name="email"
             type="email"
@@ -78,7 +79,7 @@ export const Form = () => {
         {/* Telefon */}
         <div className="flex items-center flex-col mb-6">
           <input
-            className="w-full border-2 border-black smallerFont lg:mediumFont rounded py-2 px-4 focus:border-transparent focus:ring-2 focus:ring-gray-100 focus:outline-none"
+            className="w-full border-[1px] border-black smallerFont lg:mediumFont rounded py-2 px-4 focus:border-transparent focus:ring-2 focus:ring-gray-100 focus:outline-none"
             id="number"
             name="number"
             type="text"
@@ -91,7 +92,7 @@ export const Form = () => {
         {/* Meddelande */}
         <div className="flex items-center flex-col mb-6">
           <textarea
-            className="w-full border-black smallerFont md:mediumFont md:h-[304px] resize-none border-2 rounded py-2 px-4  focus:text-[black] focus:border-transparent focus:ring-2 focus:ring-gray-100 focus:outline-none"
+            className="w-full border-black smallerFont md:mediumFont md:h-[304px] resize-none border-[1px] rounded py-2 px-4  focus:text-[black] focus:border-transparent focus:ring-2 focus:ring-gray-100 focus:outline-none"
             id="message"
             name="message"
             rows={5}
@@ -125,7 +126,7 @@ export const Form = () => {
         <div className="flex w-full ">
           <button
             type="submit"
-            className={`font-kis-normal text-[21px] border-2 border-black w-full lg:w-[30%] font-bold py-3 px-6 focus:outline-none hover:bg-[#1D1711] hover:text-white ${
+            className={`${style.contactButton} ${
               !isChecked ? "opacity-50 cursor-not-allowed" : "opacity-100"
             }`}
             disabled={!isChecked}

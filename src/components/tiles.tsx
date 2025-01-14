@@ -49,7 +49,7 @@ export const Tiles = ({ blok }: TilesProps) => {
 
   return (
     <div
-      className={`mt-20 ${
+      className={`${
         hasStylingSmycken || oneColumn
           ? "mt-0 w-[90%] mx-auto"
           : style.container
@@ -69,7 +69,7 @@ export const Tiles = ({ blok }: TilesProps) => {
         className={`${
           oneColumn
             ? "flex justify-center"
-            : "lg:grid grid-cols-2 gap-12 lg:-mt- mb-10 lg:mb-32"
+            : "lg:grid grid-cols-2 gap-12 lg:-mt- mb-10 "
         } `}
       >
         {component === "tilesblock" &&

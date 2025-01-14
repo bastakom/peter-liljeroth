@@ -1,0 +1,27 @@
+.contactButton{
+    font-family: "adobe-kis-variable", sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 21px;
+    border: 0.5px solid black;
+    width: 100%;
+    padding-top: 0.75rem; 
+    padding-bottom: 0.75rem; 
+    padding-left: 1.5rem; 
+    padding-right: 1.5rem; 
+    
+    @media screen and (min-width: 1024px) {
+        width:30%
+      }
+}
+
+
+  
+.contactButton:hover{
+    color: white;
+    background-color: #1D1711;
+}
+
+.contactButton:focus{
+    outline: none;
+}

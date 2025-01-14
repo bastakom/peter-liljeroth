@@ -44,9 +44,14 @@ export const FooterSection = ({ props }: FooterProps) => {
     <footer
       className={`footer-bg-color pt-10 pb-10 lg:py-20 mt-14 lg:mt-24 ${styles.footer}`}
     >
-      <div className="flex flex-col lg:flex-row items-center  lg:items-start gap-10 lg:gap-40 p-6 lg:pt-20 pt-10 lg:p-0 lg:pl-16">
-        <div>
-          <Image src={logo.filename} height={188} width={214} alt="" />
+      <div className="flex flex-col lg:flex-row items-center  lg:items-start gap-10 lg:gap-48 p-6 lg:pt-20 pt-10 lg:p-0 lg:pl-16">
+        <div className="relative min-w-[214px] h-[188px]">
+          <Image
+            src={logo.filename}
+            fill
+            className="object-contain"
+            alt="Logo"
+          />
         </div>
         <div className="block lg:hidden">
           <div className="flex text-[#FFFFFF] items-center">
@@ -77,7 +82,7 @@ export const FooterSection = ({ props }: FooterProps) => {
           )}
         </div>
 
-        <div className="text-[#FFFFFF] lg:ml-0 lg:mt-0 lg:flex flex-row gap-[12rem]">
+        <div className="text-[#FFFFFF] lg:ml-0 lg:mt-0 lg:flex flex-row gap-[9rem]">
           <div className="text-[#FFFFFF] flex flex-row gap-32  text-center lg:text-start ">
             <div className="mb-4 lg:ml-0">
               <h2 className="text-3xl mb-4 font-dupincel">
@@ -91,12 +96,12 @@ export const FooterSection = ({ props }: FooterProps) => {
 
           <div className="mt-6 lg:ml-0 lg:mt-0 text-center lg:text-start lg:w-[336px]">
             <h2 className="text-3xl mb-4 font-dupincel">{contact_title}</h2>
-            <div className="font-inter-thin text-[18px] lg:text-[22px] mb-0 lg:mb-6">
+            <div className="!font-inter-thin text-[18px] lg:text-[22px] mb-0 lg:mb-6">
               {phone_number}
             </div>
             <Link
               href={`mailto:${mail}`}
-              className="text-[18px] lg:text-[22px]"
+              className="!font-inter-thin text-[18px] lg:text-[22px]"
             >
               {mail}
             </Link>

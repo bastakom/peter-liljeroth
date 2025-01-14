@@ -1,13 +1,11 @@
-"use client";
-
 import { render } from "storyblok-rich-text-react-renderer";
 import Link from "next/link";
 import style from "./scss/about.module.scss";
 import { IoIosArrowDown } from "react-icons/io";
 import { MdKeyboardArrowUp } from "react-icons/md";
 import useStore from "@/lib/store";
-
 import Image from "next/image";
+import { useRef } from "react";
 
 interface ImageBlockProps {
   blok: {
@@ -42,10 +40,24 @@ export const AboutBlock = ({ blok }: ImageBlockProps) => {
     link,
     img_left,
   } = blok;
+
   const { isDropdownAboutOpen, setDropdownAboutOpen } = useStore();
 
+  const secondContentRef = useRef<HTMLDivElement | null>(null);
+  const handleToggleDropdown = () => {
+    const newState = !isDropdownAboutOpen;
+
+    if (!newState && secondContentRef.current) {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+
+    setDropdownAboutOpen(newState);
+  };
   return (
-    <div className="lg:w-full mb-10 lg:mt-28 lg:mb-20 lg:px-20 ">
+    <div className="lg:w-full mb-10 lg:mt-28 lg:mb-20 lg:px-20">
       <div
         className={`lg:flex lg:w-[100%] lg:gap-32 ${
           img_left ? "lg:flex-row-reverse lg:gap-4" : ""
@@ -62,7 +74,7 @@ export const AboutBlock = ({ blok }: ImageBlockProps) => {
           <div className={style.aboutParagraph}>{render(content)}</div>
 
           {isDropdownAboutOpen && (
-            <div className={style.aboutSecondParagraph}>
+            <div className={style.aboutSecondParagraph} ref={secondContentRef}>
               {render(secondcontent)}
             </div>
           )}
@@ -79,7 +91,7 @@ export const AboutBlock = ({ blok }: ImageBlockProps) => {
                 ? "flex items-center justify-start cursor-pointer mt-6 mb-4 lg:mb-0 lg:mt-2"
                 : "hidden"
             }`}
-            onClick={() => setDropdownAboutOpen(!isDropdownAboutOpen)}
+            onClick={handleToggleDropdown}
           >
             {isDropdownAboutOpen ? (
               <>

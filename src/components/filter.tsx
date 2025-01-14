@@ -23,9 +23,7 @@ export const Filter = ({ blok }: any) => {
           return (
             <Link
               href={`#${slicedTag}`}
-              className={`${headerActive} ${
-                headerActive === i ? "underline decoration-1 text-[#1D1711]" : ""
-              } text-[28px] hover:underline hover:decoration-1 hover:text-[#1D1711] underline-offset-8`}
+              className={` text-[28px] hover:underline hover:decoration-1 hover:text-[#1D1711] underline-offset-8`}
               key={i}
               onClick={() => handleMenuClick(i)}
             >
