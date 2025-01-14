@@ -6,6 +6,7 @@ import Image from "next/image";
 
 import { TbMenu } from "react-icons/tb";
 import { IoCloseOutline } from "react-icons/io5";
+import { TfiClose } from "react-icons/tfi";
 import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 import { LinkType, SomeLink } from "@/lib/interface";
@@ -28,13 +29,8 @@ interface NavBarProps {
 
 export const NavBar = ({ props }: NavBarProps) => {
   const { open, setIsOpenMenu } = useStore();
-  const [headerActive, setHeaderActive] = useState(0);
   const { menu, some_links, mail, phone_number } = props;
   const [scroll, setScroll] = useState(false);
-
-  const handleMenuClick = (id: any) => {
-    setHeaderActive(id);
-  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -60,7 +56,6 @@ export const NavBar = ({ props }: NavBarProps) => {
         <Image src={props.logo.filename} width={131} height={50} alt="" />
       </Link>
       <div className={`flex justify-end fixed right-5 top-2`}>
-        
         <Menu
           size={80}
           strokeWidth={0.5}
@@ -74,14 +69,14 @@ export const NavBar = ({ props }: NavBarProps) => {
         />
 
         <nav
-          className={`nav-bg-color w-[100vw] h-[100vh] lg:w-[35vw] lg:h-[100vh] absolute -top-2 -right-5 lg:-top-2 lg:-right-5 transition-all duration-500 ${
+          className={`lg:overflow-y-auto nav-bg-color w-[100vw] h-[100vh] lg:w-[35vw] lg:h-[100vh] absolute -top-2 -right-5 lg:-top-2 lg:-right-5 transition-all duration-500 ${
             open ? "translate-x-0" : "translate-x-full"
           }`}
         >
           <div className="flex justify-between px-8 lg:px-10 pt-8">
             <Image src={props.logo.filename} width={87} height={76} alt="" />
-            <IoCloseOutline
-              fontSize={70}
+            <TfiClose
+              fontSize={50}
               color="white"
               className="cursor-pointer"
               onClick={() => setIsOpenMenu(false)}
@@ -95,14 +90,9 @@ export const NavBar = ({ props }: NavBarProps) => {
                   href={el.link.cached_url}
                   key={index}
                   onClick={() => {
-                    handleMenuClick(index);
                     setIsOpenMenu(false);
                   }}
-                  className={`text-[24px] lg:text-[40px] text-white relative ${
-                    headerActive === index
-                      ? "underline decoration-[#16110D] underline-offset-8"
-                      : ""
-                  }`}
+                  className={`text-[24px] lg:text-[40px] text-white relative hover:underline decoration-[#16110D] underline-offset-8"`}
                 >
                   {el.title}
                 </Link>
@@ -111,7 +101,7 @@ export const NavBar = ({ props }: NavBarProps) => {
           </ul>
 
           <div className="flex justify-center mt-14 lg:mt-32">
-            <hr className="w-[80%] color-black opacity-20 border-t-4" />
+            <hr className="w-[80%] color-black opacity-20 border-t-2" />
           </div>
 
           <div className="flex px-8 lg:px-16 gap-5 items-center pt-8">
@@ -136,7 +126,7 @@ export const NavBar = ({ props }: NavBarProps) => {
             })}
           </div>
 
-          <div className="font-kis-normal px-10 lg:px-[4.5rem] mt-6 flex justify-between lg:flex-col gap-2">
+          <div className="font-kis-normal px-10 lg:px-[4.5rem] mt-6 flex justify-between lg:flex-col gap-2 lg:pb-4">
             <Link href={`mailto:${mail}`} className="text-[#FFFFFF] text-xl">
               {mail}
             </Link>

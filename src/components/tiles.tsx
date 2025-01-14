@@ -49,7 +49,7 @@ export const Tiles = ({ blok }: TilesProps) => {
 
   return (
     <div
-      className={`mt-20 ${
+      className={`${
         hasStylingSmycken || oneColumn
           ? "mt-0 w-[90%] mx-auto"
           : style.container

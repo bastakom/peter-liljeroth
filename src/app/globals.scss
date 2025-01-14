@@ -27,6 +27,12 @@ h2{
   line-height: 1.2;
   letter-spacing: 0.66px;
 }
+
+h2{
+  span{
+    font-size: 30px;
+  }
+}
 .p, u, 
 label,
 input {
@@ -35,12 +41,21 @@ input {
   font-style: normal;
 }
 
-.font-inter-thin {
+b{
   font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.font-inter-thin {
+  font-family: "Inter", sans-serif !important;
   font-weight: 100;
   font-style: normal;
 }
 
+a.font-inter-thin {
+  font-family: "Inter", sans-serif !important;
+  font-weight: 300 !important; 
+}
 
 
 .font-dupincel {
@@ -88,6 +103,7 @@ $primary: #fff;
     background-color: white;
     color: #1d1711;
   }
+
 }
 
 .other-information {

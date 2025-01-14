@@ -14,7 +14,7 @@ export const ProductBlock = ({ blok }: any) => {
   };
 
   return (
-    <div className="font-kis-normal lg:pt-20 lg:w-[90%] mx-auto px-5 lg:px-0">
+    <div className="pt-4 font-kis-normal lg:pt-20 lg:w-[90%] mx-auto px-5lg:px-0">
       <h2 className="text-[38px] mb-10 text-[#1D1711]">{blok.title}</h2>
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-5 mx-auto ">
         {blok.products.map((item: any) => {
@@ -24,12 +24,12 @@ export const ProductBlock = ({ blok }: any) => {
               className="flex flex-col gap-4 bg-[white]"
               onClick={() => handleOpenModal(item.uuid)}
             >
-              <div className="w-full h-[240px] lg:h-[400px] 3xl:h-[600px] relative">
+              <div className="w-full h-[35vh] lg:h-[50vh] 3xl:h-[600px] relative">
                 <Image
                   src={item.content.image?.filename || ""}
                   fill
                   alt=""
-                  className="object-contain"
+                  className="lg:object-contain"
                 />
               </div>
               <div className="flex flex-col text-left bg-[#fff] w-full pt-0">
