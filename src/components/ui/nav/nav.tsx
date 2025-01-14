@@ -92,7 +92,7 @@ export const NavBar = ({ props }: NavBarProps) => {
                   onClick={() => {
                     setIsOpenMenu(false);
                   }}
-                  className={`text-[24px] lg:text-[40px] text-white relative hover:underline decoration-[#16110D] underline-offset-8"`}
+                  className={`text-[24px] lg:text-[40px] text-white relative hover:underline decoration-[#16110D] underline-offset-8`}
                 >
                   {el.title}
                 </Link>
