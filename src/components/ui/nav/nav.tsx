@@ -74,7 +74,9 @@ export const NavBar = ({ props }: NavBarProps) => {
           }`}
         >
           <div className="flex justify-between px-8 lg:px-10 pt-8">
-            <Image src={props.logo.filename} width={87} height={76} alt="" />
+            <Link href="/" onClick={() => setIsOpenMenu(false)}>
+              <Image src={props.logo.filename} width={87} height={76} alt="" />
+            </Link>
             <TfiClose
               fontSize={50}
               color="white"
