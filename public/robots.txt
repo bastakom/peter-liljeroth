@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://peter-liljeroth.se
+
+# Sitemaps
+Sitemap: https://peter-liljeroth.se/sitemap.xml

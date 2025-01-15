@@ -29,7 +29,7 @@ export const CTABlock = ({ blok }: CTAblockProps) => {
   return (
     <div
       className={`relative mx-auto w-full flex justify-center h-[60vh] lg:mb-0 lg:h-full px-5 lg:px-0 ${
-        blok.three_images ? "lg:mb-20 lg:mt-32" : "mb-10"
+        blok.three_images ? "mb-20 mt-20 lg:mb-20 lg:mt-32" : "mb-10"
       }`}
     >
       <div className="z-10 flex flex-col items-center justify-center text-center max-w-[70%] lg:max-w-[50%] gap-5 relative">
@@ -57,7 +57,7 @@ export const CTABlock = ({ blok }: CTAblockProps) => {
             </div>
           </div>
         ) : (
-          <div className="py-44 flex flex-col items-center justify-center gap-5 lg:w-[70%]">
+          <div className="py-44 flex flex-col-reverse items-center justify-center gap-5 lg:w-[70%]">
             <span className="text-[#DDCA7D] text-[20px] font-kis-italic">
               {blok.sub_title}
             </span>

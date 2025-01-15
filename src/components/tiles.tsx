@@ -51,7 +51,7 @@ export const Tiles = ({ blok }: TilesProps) => {
     <div
       className={`${
         hasStylingSmycken || oneColumn
-          ? "mt-0 w-[90%] mx-auto"
+          ? "mt-0 w-[90%] mx-auto mb-10 lg:mb-0"
           : style.container
       }
     ${margin ? "lg:pl-16" : ""}
@@ -59,7 +59,12 @@ export const Tiles = ({ blok }: TilesProps) => {
     >
       {component === "content_intro" && (
         <div className="lg:w-[55%]">
-          <h1 className={style.tilesHeading}>{subtitle}</h1>
+          <h1
+            className="text-[#AB8100] text-[22px] mb-[20px] font-[adobe-kis-variable, sans-serif]
+  "
+          >
+            {subtitle}
+          </h1>
           <h2 className={style.tilesSubtitle}>{heading}</h2>
           <div className={style.tilesParagraph}>{render(content)}</div>
         </div>
@@ -79,7 +84,9 @@ export const Tiles = ({ blok }: TilesProps) => {
             return (
               <div
                 key={index}
-                className={`${oneColumn ? "lg:w-[60%]" : "lg:w-[90%]"}`}
+                className={`${
+                  oneColumn ? "lg:w-[60%]" : "lg:w-[90%] mb-10 lg:mb-0"
+                }`}
                 ref={(el) => {
                   refs.current[index] = el;
                 }}
