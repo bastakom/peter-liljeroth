@@ -34,14 +34,14 @@ export const SomeLinks = ({ blok }: SomeLinks) => {
             case "fb":
               return (
                 <Link key={el._uid} href={el.link.cached_url}>
-                  <FaFacebookF fontSize={33} color="#DDCA7D" />
+                  <FaFacebookF fontSize={33} color="#AB8100" />
                 </Link>
               );
 
             case "ig":
               return (
                 <Link key={el._uid} href={el.link.cached_url}>
-                  <FaInstagram fontSize={30} color="#DDCA7D" />
+                  <FaInstagram fontSize={30} color="#AB8100" />
                 </Link>
               );
             default:
