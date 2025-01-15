@@ -3,9 +3,19 @@ import { FaInstagram } from "react-icons/fa6";
 import Link from "next/link";
 import { SomeLink } from "@/lib/interface";
 
-export const SomeLinks = ({ blok }: any) => {
-  const { link, some, contact_title, email } = blok;
-  console.log(blok);
+interface SomeLinks {
+  blok: {
+    some: SomeLink[];
+    contact_title: string;
+    email: {
+      cached_url: string;
+      url: string;
+    };
+  };
+}
+
+export const SomeLinks = ({ blok }: SomeLinks) => {
+  const { some, contact_title, email } = blok;
   return (
     <div className="flex flex-col mt-2 lg:mt-20 px-8 lg:px-16 gap-12 pt-0 lg:pt-8">
       <div className="flex justify-center flex-col items-center">
@@ -19,7 +29,7 @@ export const SomeLinks = ({ blok }: any) => {
         </Link>
       </div>
       <div className="flex justify-center flex-row items-center gap-4">
-        {some.map((el: any) => {
+        {some.map((el: SomeLink) => {
           switch (el.some) {
             case "fb":
               return (
