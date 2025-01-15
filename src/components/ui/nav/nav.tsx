@@ -15,6 +15,10 @@ import { Menu } from "lucide-react";
 
 interface NavBarProps {
   props: {
+    menu_logo: {
+      filename: string;
+      alt: string;
+    };
     logo: {
       filename: string;
       alt: string;
@@ -29,7 +33,7 @@ interface NavBarProps {
 
 export const NavBar = ({ props }: NavBarProps) => {
   const { open, setIsOpenMenu } = useStore();
-  const { menu, some_links, mail, phone_number } = props;
+  const { menu, some_links, mail, phone_number, menu_logo } = props;
   const [scroll, setScroll] = useState(false);
 
   useEffect(() => {
@@ -75,7 +79,12 @@ export const NavBar = ({ props }: NavBarProps) => {
         >
           <div className="flex justify-between px-8 lg:px-10 pt-8">
             <Link href="/" onClick={() => setIsOpenMenu(false)}>
-              <Image src={props.logo.filename} width={87} height={76} alt="" />
+              <Image
+                src={props.menu_logo.filename}
+                width={87}
+                height={76}
+                alt=""
+              />
             </Link>
             <TfiClose
               fontSize={50}
@@ -112,14 +121,14 @@ export const NavBar = ({ props }: NavBarProps) => {
                 case "fb":
                   return (
                     <Link key={el._uid} href={el.link.cached_url}>
-                      <FaFacebookF fontSize={30} color="#F6EEDC" />
+                      <FaFacebookF fontSize={30} color="#DDCA7D" />
                     </Link>
                   );
 
                 case "ig":
                   return (
                     <Link key={el._uid} href={el.link.cached_url}>
-                      <FaInstagram fontSize={30} color="#F6EEDC" />
+                      <FaInstagram fontSize={30} color="#DDCA7D" />
                     </Link>
                   );
                 default:
