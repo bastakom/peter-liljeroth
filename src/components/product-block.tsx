@@ -8,7 +8,6 @@ import { render } from "storyblok-rich-text-react-renderer";
 export const ProductBlock = ({ blok }: any) => {
   const [open, setIsOpen] = useState<string | null>(null);
   const [close, setClose] = useState<boolean>(false);
-
   const handleOpenModal = (id: string) => {
     setIsOpen(open === id ? null : id);
   };
