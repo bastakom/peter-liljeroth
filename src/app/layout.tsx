@@ -6,8 +6,8 @@ import { Header } from "@/components/ui/nav/header";
 import { Footer } from "@/components/ui/footer/footer";
 
 export const metadata: Metadata = {
-  title: "Peter *Liljeroth",
-  description: "Peter Liljeroth",
+  title: "Peter Liljeroth",
+  description: "Peter Liljeroth design - Handgjort, unikt och personligt",
 };
 
 const cachedFetch = (input: any, init?: any): Promise<Response> => {
