@@ -15,6 +15,7 @@ import { Tiles } from "./tiles";
 import { ProductBlock } from "./product-block";
 import { Filter } from "./filter";
 import OtherInformation from "./ovrig-information";
+import { SomeLinks } from "./some-block";
 
 storyblokInit({
   components: {
@@ -32,6 +33,7 @@ storyblokInit({
     product_block: ProductBlock,
     filter: Filter,
     other_information: OtherInformation,
+    some_block: SomeLinks,
   },
   enableFallbackComponent: true,
 });
