@@ -45,7 +45,6 @@ export const FooterSection = ({ props }: FooterProps) => {
     mail,
   } = props;
   const { isDropdownFooterOpen, setDropdownFooterOpen } = useStore();
-  console.log(props);
   return (
     <footer
       className={`relative footer-bg-color pt-10 pb-10 lg:py-20 mt-14 lg:mt-24 ${styles.footer}`}
