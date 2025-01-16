@@ -35,6 +35,10 @@ export const NavBar = ({ props }: NavBarProps) => {
   const { open, setIsOpenMenu } = useStore();
   const { menu, some_links, mail, phone_number, menu_logo } = props;
   const [scroll, setScroll] = useState(false);
+  const [headerActive, setHeaderActive] = useState(0);
+  const handleMenuClick = (id: any) => {
+    setHeaderActive(id);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -73,7 +77,7 @@ export const NavBar = ({ props }: NavBarProps) => {
         />
 
         <nav
-          className={`lg:overflow-y-auto nav-bg-color w-[100vw] h-[100vh] lg:w-[35vw] lg:h-[100vh] absolute -top-2 -right-5 lg:-top-2 lg:-right-5 transition-all duration-500 ${
+          className={`pb-8 lg:pb-0 overflow-y-auto nav-bg-color w-[100vw] h-[100vh] lg:w-[35vw] lg:h-[100vh] absolute -top-2 -right-5 lg:-top-2 lg:-right-5 transition-all duration-500 ${
             open ? "translate-x-0" : "translate-x-full"
           }`}
         >
@@ -81,13 +85,13 @@ export const NavBar = ({ props }: NavBarProps) => {
             <Link href="/" onClick={() => setIsOpenMenu(false)}>
               <Image
                 src={props.menu_logo.filename}
-                width={87}
+                width={94}
                 height={76}
                 alt=""
               />
             </Link>
             <TfiClose
-              fontSize={50}
+              fontSize={40}
               color="white"
               className="cursor-pointer"
               onClick={() => setIsOpenMenu(false)}
@@ -102,8 +106,15 @@ export const NavBar = ({ props }: NavBarProps) => {
                   key={index}
                   onClick={() => {
                     setIsOpenMenu(false);
+                    handleMenuClick(index);
                   }}
-                  className={`text-[24px] lg:text-[40px] text-white relative hover:underline decoration-[#16110D] underline-offset-8`}
+                  className={`text-[38px] lg:text-[40px] text-white relative hover:underline decoration-[#16110D] underline-offset-8 
+                  ${
+                    headerActive === index
+                      ? "underline decoration-[#16110D] underline-offset-8"
+                      : "no-underline"
+                  }
+                  lg:${headerActive === index && "no-underline"}`}
                 >
                   {el.title}
                 </Link>
@@ -137,11 +148,16 @@ export const NavBar = ({ props }: NavBarProps) => {
             })}
           </div>
 
-          <div className="font-kis-normal px-10 lg:px-[4.5rem] mt-6 flex justify-between lg:flex-col gap-2 lg:pb-4">
-            <Link href={`mailto:${mail}`} className="text-[#FFFFFF] text-xl">
+          <div className="font-inter-thin px-10 lg:px-[4.5rem] mt-6 flex justify-between lg:flex-col gap-2 lg:pb-4">
+            <Link
+              href={`mailto:${mail}`}
+              className="text-[#FFFFFF] text-[18px] lg:text-xl"
+            >
               {mail}
             </Link>
-            <div className="text-[#FFFFFF] text-xl">{phone_number}</div>
+            <div className="text-[#FFFFFF] text-[18px] lg:text-xl">
+              {phone_number}
+            </div>
           </div>
         </nav>
       </div>

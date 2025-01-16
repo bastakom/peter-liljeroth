@@ -32,14 +32,21 @@ export const CTABlock = ({ blok }: CTAblockProps) => {
         blok.three_images ? "mb-20 mt-20 lg:mb-20 lg:mt-32" : "mb-10"
       }`}
     >
+      <div
+        className={`${
+          blok.three_images
+            ? "bg-black opacity-30 w-full absolute top-0 h-[70vh] lg:hidden z-10"
+            : "hidden"
+        }`}
+      />
       <div className="z-10 flex flex-col items-center justify-center text-center max-w-[70%] lg:max-w-[50%] gap-5 relative">
         {blok.three_images ? (
           <div className="py-32 lg:py-44 flex flex-col items-center justify-center gap-5">
-            <h4 className="text-white text-[22px] tracking-[0.66px]">
+            <h4 className="text-white text-[18px] lg:text-[22px] tracking-[1.5px] lg:tracking-[0.66px]">
               {blok.sub_title}
             </h4>
 
-            <h2 className="text-white text-[30px] lg:text-[40px]">
+            <h2 className="text-white text-[32px] lg:text-[40px] tracking-[1px] lg:tracking-[0.66px]">
               {render(blok.title)}
             </h2>
             <div>
@@ -47,7 +54,7 @@ export const CTABlock = ({ blok }: CTAblockProps) => {
                 return (
                   <Link
                     key={index}
-                    className="button text-white lg:mt-8 cursor-pointer"
+                    className="button text-white mt-6 lg:mt-8 cursor-pointer"
                     href={button.link.cached_url}
                   >
                     {button.title}
@@ -58,10 +65,10 @@ export const CTABlock = ({ blok }: CTAblockProps) => {
           </div>
         ) : (
           <div className="py-44 flex flex-col-reverse items-center justify-center gap-5 lg:w-[70%]">
-            <span className="text-[#DDCA7D] text-[20px] font-kis-italic">
+            <span className="text-[#DDCA7D] text-[16px] lg:text-[20px] font-kis-italic">
               {blok.sub_title}
             </span>
-            <h3 className="text-white text-[20px] lg:text-[40px] text-center">
+            <h3 className="text-white text-[22px] leading-9 lg:leading-[60px] lg:text-[40px] text-center">
               {render(blok.title)}
             </h3>
           </div>
