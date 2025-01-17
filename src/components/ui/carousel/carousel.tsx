@@ -67,7 +67,7 @@ export const Carousel = ({ images }: CarouselProps) => {
               />
             </button>
 
-            <div className="flex flex-col text-left bg-[#fff] w-full pt-0 mb-6 -mt-10 lg:mb-0">
+            <div className="flex flex-col text-left bg-[#fff] w-full pt-0 mb-10 -mt-10 lg:mb-0">
               <h4 className="text-[13px]">{src.content.sub_title}</h4>
               <h2 className="text-[28px]">{src.name}</h2>
             </div>

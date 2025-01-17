@@ -4,8 +4,6 @@ import useStore from "@/lib/store";
 import Link from "next/link";
 import Image from "next/image";
 
-import { TbMenu } from "react-icons/tb";
-import { IoCloseOutline } from "react-icons/io5";
 import { TfiClose } from "react-icons/tfi";
 import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";

@@ -57,9 +57,7 @@ export const FooterSection = ({ props }: FooterProps) => {
   const { isBusinessInfoFirstOpen, setBusinessInfoFirstOpen } = useStore();
   const { isBusinessInfoSecondOpen, setBusinessInfoSecondOpen } = useStore();
   return (
-    <footer
-      className={`relative footer-bg-color pt-10 pb-10 lg:py-20 lg:mt-24 ${styles.footer}`}
-    >
+    <footer className={` relative pt-10 pb-10 lg:py-20 lg:mt-24`}>
       <Image
         src={mobile_bg.filename}
         alt="Footer mobile background"
