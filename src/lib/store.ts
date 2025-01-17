@@ -11,6 +11,8 @@ interface IsOpenMenu {
   setBusinessInfoFirstOpen: (value: boolean) => void;
   isBusinessInfoSecondOpen: boolean;
   setBusinessInfoSecondOpen: (value: boolean) => void;
+  openModal: string | null;
+  setOpenModal: (value:string) => void;
 }
 
 const useStore = create<IsOpenMenu>((set) => ({
@@ -24,6 +26,8 @@ const useStore = create<IsOpenMenu>((set) => ({
   setBusinessInfoFirstOpen: (value) => set({ isBusinessInfoFirstOpen: value }),
   isBusinessInfoSecondOpen: false,
   setBusinessInfoSecondOpen: (value) => set({ isBusinessInfoSecondOpen: value }),
+  openModal: null,
+  setOpenModal: (value) => set({ openModal: value }),
 }));
 
 export default useStore;

@@ -56,7 +56,6 @@ export const FooterSection = ({ props }: FooterProps) => {
   const { isDropdownFooterOpen, setDropdownFooterOpen } = useStore();
   const { isBusinessInfoFirstOpen, setBusinessInfoFirstOpen } = useStore();
   const { isBusinessInfoSecondOpen, setBusinessInfoSecondOpen } = useStore();
-  console.log(props);
   return (
     <footer
       className={`relative footer-bg-color pt-10 pb-10 lg:py-20 lg:mt-24 ${styles.footer}`}
