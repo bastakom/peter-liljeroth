@@ -4,6 +4,7 @@ import { StoryblokProvider } from "@/components/StoryblokProvider";
 import "./globals.scss";
 import { Header } from "@/components/ui/nav/header";
 import { Footer } from "@/components/ui/footer/footer";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Peter Liljeroth",
@@ -55,6 +56,15 @@ export default function RootLayout({
           <Header />
           {children}
           <Footer />
+          <Script src="https://consent.cookiebot.com/uc.js" />
+          <script
+            id="Cookiebot"
+            src="https://consent.cookiebot.com/uc.js"
+            data-cbid="3289e7a8-ccf6-4717-bccd-7088f4a3c5c9"
+            data-blockingmode="manual"
+            type="text/javascript"
+            async
+          ></script>
         </body>
       </html>
     </StoryblokProvider>
