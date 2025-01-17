@@ -13,7 +13,6 @@ export const ProductBlock = ({ blok }: any) => {
   const handleOpenModal = (id: any) => {
     setOpenModal(openModal === id ? null : id);
   };
-  console.log(openModal);
   return (
     <div className="pt-4 font-kis-normal lg:pt-20 lg:w-[90%] mx-auto px-5 lg:px-0">
       <h2 className="text-[28px] lg:text-[38px] mb-6 lg:mb-10 text-[#1D1711]">
@@ -37,7 +36,7 @@ export const ProductBlock = ({ blok }: any) => {
                   className="lg:object-contain hidden lg:flex"
                 />
               </div>
-              <div className=" flex-col text-left bg-[#fff] w-full pt-0 mb-6 lg:mb-0 hidden lg:flex">
+              <div className="flex-col text-left bg-[#fff] w-full pt-0 mb-6 lg:mb-0 hidden lg:flex">
                 <h4 className="text-[13px]">{item.content.sub_title}</h4>
                 <h2 className="text-[28px]">{item.name}</h2>
               </div>
