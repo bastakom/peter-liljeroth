@@ -42,14 +42,16 @@ export const ImageBlock = ({ blok }: ImageBlockProps) => {
       }`}
     >
       <div
-        className={`flex justify-end gap-5 lg:gap-14 ${
+        className={`flex justify-end lg:gap-14 ${
           image_left
             ? "flex-col-reverse lg:flex-row-reverse"
             : " flex-col-reverse lg:flex-row lg:items-start lg:justify-end"
-        }  ${heading_order ? "lg:px-20" : "lg:px-0"}`}
+        }  ${heading_order ? "lg:px-20" : "lg:px-0"}
+        ${padding ? "mb-8 lg:mb-0" : ""}
+        `}
       >
         <div
-          className={`lg:px-0 lg:w-[50%] lg:mt-20 ${
+          className={`w-[100%] items-center lg:items-start lg:px-0 lg:w-[50%] lg:mt-20 ${
             !padding && "lg:ml-20"
           } flex flex-col ${
             heading_order
@@ -69,7 +71,7 @@ export const ImageBlock = ({ blok }: ImageBlockProps) => {
           <h2
             className={`${
               !small_text && heading_order
-                ? "text-[20px] font-kis-italic text-[#AB8100]"
+                ? "text-[18px] lg:text-[20px] tracking-[1px] lg:tracking-[0.66px] font-kis-italic text-[#AB8100] mb-12 lg:mb-0"
                 : style.imageTitle
             } ${small_text && "text-[100px]"} `}
           >
@@ -79,7 +81,7 @@ export const ImageBlock = ({ blok }: ImageBlockProps) => {
           <div
             className={`${
               heading_order
-                ? "font-kis-italic text-[30px] lg:w-[70%] lg:text-[40px] mb-10"
+                ? "font-kis-italic mt-8 lg-mt-0 text-[30px] lg:w-[70%] lg:text-[40px] mb-10"
                 : style.imageParagraph
             } ${!padding && image_left && "pr-10"}`}
           >
@@ -89,7 +91,10 @@ export const ImageBlock = ({ blok }: ImageBlockProps) => {
             button.length > 0 &&
             button.map((el: Links, index: number) => {
               return (
-                <div className="flex w-[70%] text-[#1d1711]" key={index}>
+                <div
+                  className="flex w-[100%] mt-4 lg:mt-0 justify-center lg:justify-start lg:w-[70%] text-[#1d1711]"
+                  key={index}
+                >
                   <Link
                     className={style.contentButton}
                     href={el.link.cached_url}
@@ -105,8 +110,12 @@ export const ImageBlock = ({ blok }: ImageBlockProps) => {
             image_left ? "items-start" : " items-end"
           } ${
             heading_order
-              ? "h-[500px] lg:h-[900px]"
-              : " h-[300px] mt-4 lg:mt-0 lg:h-[750px]"
+              ? "h-[380px] lg:h-[900px]"
+              : " h-[300px] lg:mt-0 lg:h-[750px]"
+          } ${
+            padding && !heading_order
+              ? "mb-8 lg:mb-0 mt-0"
+              : "mb-0 lg:mt-0 mt-4"
           }`}
         >
           {image.filename && (

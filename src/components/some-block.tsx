@@ -17,7 +17,7 @@ interface SomeLinks {
 export const SomeLinks = ({ blok }: SomeLinks) => {
   const { some, contact_title, email } = blok;
   return (
-    <div className="flex flex-col mt-2 lg:mt-20 px-8 lg:px-16 gap-12 pt-0 lg:pt-8">
+    <div className="flex flex-col mt-2 lg:mt-20 px-8 lg:px-16 gap-12 pt-0 mb-12 lg:mb-0 lg:pt-8">
       <div className="flex justify-center flex-col items-center">
         <hr className="w-[20%] lg:w-[6%] border-t-2 border-gray-300 pb-6 mt-20"></hr>
         <h2 className="text-[22px] mb-4">{contact_title}</h2>

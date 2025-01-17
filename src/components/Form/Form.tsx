@@ -123,7 +123,7 @@ export const Form = () => {
           </label>
         </div>
         {/* Submit knapp */}
-        <div className="flex w-full ">
+        <div className="flex w-full pb-14 lg:pb-0">
           <button
             type="submit"
             className={`${style.contactButton} ${

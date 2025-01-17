@@ -4,18 +4,23 @@ import Image from "next/image";
 import { useState } from "react";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { render } from "storyblok-rich-text-react-renderer";
+import { Carousel } from "./ui/carousel/carousel";
+import useStore from "@/lib/store";
 
 export const ProductBlock = ({ blok }: any) => {
-  const [open, setIsOpen] = useState<string | null>(null);
+  const { openModal, setOpenModal } = useStore();
   const [close, setClose] = useState<boolean>(false);
-  const handleOpenModal = (id: string) => {
-    setIsOpen(open === id ? null : id);
+  const handleOpenModal = (id: any) => {
+    setOpenModal(openModal === id ? null : id);
   };
-
   return (
     <div className="pt-4 font-kis-normal lg:pt-20 lg:w-[90%] mx-auto px-5 lg:px-0">
-      <h2 className="text-[38px] mb-10 text-[#1D1711]">{blok.title}</h2>
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-5 mx-auto ">
+      <h2 className="text-[28px] lg:text-[38px] mb-6 lg:mb-10 text-[#1D1711]">
+        {blok.title}
+      </h2>
+      <Carousel images={blok.products} />
+
+      <div className="lg:grid grid-cols-1 lg:grid-cols-4 gap-5 mx-auto ">
         {blok.products.map((item: any) => {
           return (
             <button
@@ -23,15 +28,15 @@ export const ProductBlock = ({ blok }: any) => {
               className="flex flex-col gap-4 bg-[white]"
               onClick={() => handleOpenModal(item.uuid)}
             >
-              <div className="w-full h-[45vh] lg:h-[50vh] 3xl:h-[600px] relative">
+              <div className="w-full h-[45vh] lg:h-[50vh] 3xl:h-[600px] relative hidden lg:flex">
                 <Image
                   src={item.content.image?.filename || ""}
                   fill
                   alt=""
-                  className="lg:object-contain"
+                  className="lg:object-contain hidden lg:flex"
                 />
               </div>
-              <div className="flex flex-col text-left bg-[#fff] w-full pt-0 mb-10 lg:mb-0">
+              <div className="flex-col text-left bg-[#fff] w-full pt-0 mb-6 lg:mb-0 hidden lg:flex">
                 <h4 className="text-[13px]">{item.content.sub_title}</h4>
                 <h2 className="text-[28px]">{item.name}</h2>
               </div>
@@ -40,9 +45,9 @@ export const ProductBlock = ({ blok }: any) => {
         })}
 
         {blok.products.map((item: any) =>
-          open === item.uuid ? (
+          openModal === item.uuid ? (
             <div
-              className="fixed top-0 w-full h-full lg:h-[100vh] flex justify-center items-center z-50 left-0 text-white"
+              className="fixed top-0 w-full h-[100vh] lg:h-[100vh] flex justify-center items-center z-50 left-0 text-white"
               key={item.uuid}
             >
               <div
@@ -51,7 +56,7 @@ export const ProductBlock = ({ blok }: any) => {
               />
               <div
                 className={`bg-white lg:px-20 rounded-xl text-black flex flex-col justify-center m-5 lg:m-0 h-[90%] px-10 lg:h-[500px] lg:w-[50%] absolute ${
-                  open === item.uuid && "animate-fade-up"
+                  openModal === item.uuid && "animate-fade-up"
                 }`}
               >
                 <button
