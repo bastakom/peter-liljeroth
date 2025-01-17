@@ -106,6 +106,12 @@ $primary: #fff;
 
 }
 
+.imageBlockContainer:nth-of-type(7){
+  padding-bottom: 3rem;
+  @media screen and (min-width: 1024px) {
+    padding-bottom: 0rem;
+  }
+}
 .other-information {
   h4 {
     font-size: 20px;

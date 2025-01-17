@@ -37,7 +37,7 @@ export const ImageBlock = ({ blok }: ImageBlockProps) => {
 
   return (
     <div
-      className={`lg:mt-28 lg:mb-10 mx-auto px-5 pb-0 lg:px-0 ${
+      className={`imageBlockContainer lg:mt-28 lg:mb-10 mx-auto px-5 pb-0 lg:px-0 ${
         padding ? "container py-10" : " w-full"
       }`}
     >

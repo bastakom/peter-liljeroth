@@ -47,15 +47,18 @@ export const AboutBlock = ({ blok }: ImageBlockProps) => {
   const handleToggleDropdown = () => {
     const newState = !isDropdownAboutOpen;
 
-    if (!newState && secondContentRef.current) {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-    }
-
     setDropdownAboutOpen(newState);
+
+    if (!newState && secondContentRef.current) {
+      setTimeout(() => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      }, 100);
+    }
   };
+
   return (
     <div className="lg:w-full lg:mt-28 lg:mb-20 lg:px-20">
       <div

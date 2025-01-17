@@ -16,7 +16,9 @@ const CookieConsent = () => {
     }
   }, []);
 
-  return <div id="CookiebotWrapper" className="container m-auto mt-28"></div>;
+  return (
+    <div id="CookiebotWrapper" className="container px-4 pt-10 py-8"></div>
+  );
 };
 
 export default CookieConsent;
