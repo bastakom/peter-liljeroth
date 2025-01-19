@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import useStore from "@/lib/store";
+import { useSwipeable } from "react-swipeable";
 
 interface CarouselProps {
-  images: string[];
+  images: any[];
 }
 
 export const Carousel = ({ images }: CarouselProps) => {
@@ -15,39 +16,49 @@ export const Carousel = ({ images }: CarouselProps) => {
   useEffect(() => {
     setIsMounted(true);
   }, []);
+
   // Funktionen för att gå till föregående bild
-  const goToPrevious = (event: React.MouseEvent) => {
-    event.stopPropagation();
+  const goToPrevious = () => {
     setActiveIndex((prevIndex) =>
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
     );
   };
 
-  const handleOpenModal = (id: any) => {
-    setOpenModal(openModal === id ? null : id);
-  };
-
   // Funktionen för att gå till nästa bild
-  const goToNext = (event: React.MouseEvent) => {
-    event.stopPropagation();
+  const goToNext = () => {
     setActiveIndex((prevIndex) =>
       prevIndex === images.length - 1 ? 0 : prevIndex + 1
     );
   };
 
+  // Hanterar öppning av modalen när en bild klickas på
+  const handleOpenModal = (id: any) => {
+    setOpenModal(openModal === id ? null : id);
+  };
+
+  // Setup swipe functionality using useSwipeable
+  const handlers = useSwipeable({
+    onSwipedLeft: goToNext,
+    onSwipedRight: goToPrevious,
+    trackMouse: true,
+    swipeDuration: 500,
+  });
+
   // Rendera endast komponenten när den har monterats på klienten
   if (!isMounted) {
-    return null; // Eller en loader/placeholder om du vill visa något medan du väntar
+    return null;
   }
 
   return (
     <div
       id="animation-carousel"
       className="relative mb-16 lg:mb-0 w-full lg:hidden -mt-16"
+      /*     style={{ touchAction: "none" }} */
+      {...handlers}
     >
       <div className="relative h-[65vh] md:h-96">
         {/* Loopar genom bilderna */}
-        {images.map((src: any, index) => (
+        {images.map((src, index) => (
           <div
             key={index}
             className={`duration-200 ease-linear ${
@@ -59,12 +70,14 @@ export const Carousel = ({ images }: CarouselProps) => {
               className="w-full h-[470px] relative"
               onClick={() => handleOpenModal(src.uuid)}
             >
-              <Image
-                src={src.content.image.filename}
-                fill
-                className="object-contain top-0"
-                alt={`Slide ${index + 1}`}
-              />
+              <div>
+                <Image
+                  src={src.content.image.filename}
+                  fill
+                  className="object-contain top-0"
+                  alt={`Slide ${index + 1}`}
+                />
+              </div>
             </button>
 
             <div className="flex flex-col text-left bg-[#fff] w-full pt-0 mb-10 -mt-10 lg:mb-0">
