@@ -53,7 +53,6 @@ export const Carousel = ({ images }: CarouselProps) => {
     <div
       id="animation-carousel"
       className="relative mb-16 lg:mb-0 w-full lg:hidden -mt-16"
-      /*     style={{ touchAction: "none" }} */
       {...handlers}
     >
       <div className="relative h-[65vh] md:h-96">
