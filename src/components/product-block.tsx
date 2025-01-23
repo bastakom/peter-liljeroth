@@ -31,9 +31,10 @@ export const ProductBlock = ({ blok }: any) => {
               <div className="w-full h-[45vh] gap-4 lg:h-[100%] 3xl:h-[600px] relative hidden lg:flex">
                 <Image
                   src={item.content.image?.filename || ""}
-                  alt="Image description"
-                  layout="fill"
+                  alt=""
+                  fill
                   objectFit="cover"
+                  className="lg:object-contain hidden lg:flex"
                 />
               </div>
               <div className="flex-col text-left bg-[#fff] w-full pt-0 mb-6 lg:mb-0 hidden lg:flex">
