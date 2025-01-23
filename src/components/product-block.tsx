@@ -25,15 +25,15 @@ export const ProductBlock = ({ blok }: any) => {
           return (
             <button
               key={item.uuid}
-              className="flex flex-col gap-4 bg-[white]"
+              className="flex flex-col gap-4 bg-[white] lg:h-[50vh]"
               onClick={() => handleOpenModal(item.uuid)}
             >
-              <div className="w-full h-[45vh] lg:h-[50vh] 3xl:h-[600px] relative hidden lg:flex">
+              <div className="w-full h-[45vh] gap-4 lg:h-[100%] 3xl:h-[600px] relative hidden lg:flex">
                 <Image
                   src={item.content.image?.filename || ""}
-                  fill
-                  alt=""
-                  className="lg:object-contain hidden lg:flex"
+                  alt="Image description"
+                  layout="fill"
+                  objectFit="cover"
                 />
               </div>
               <div className="flex-col text-left bg-[#fff] w-full pt-0 mb-6 lg:mb-0 hidden lg:flex">

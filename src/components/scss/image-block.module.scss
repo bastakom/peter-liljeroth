@@ -49,12 +49,10 @@
 .imageParagraph {
   font-size: 18px;
   font-family: "Inter", sans-serif;
-  font-weight: 300;
+  font-weight: 100;
   font-style: normal;
   text-align: center;
   @media screen and (min-width: 1024px) {
     text-align: start;
   }
 }
-
-

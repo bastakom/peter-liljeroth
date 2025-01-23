@@ -30,7 +30,7 @@ export const ContentBlock = ({ blok }: ContentBlock) => {
           <h2 className="text-[22px] mt-8 text-[#AB8100]">{subtitle}</h2>
           <h2 className="text-[30px] lg:text-[58px]">{title}</h2>
 
-          <div>{render(content)}</div>
+          <div className="content-block">{render(content)}</div>
         </div>
       </div>
     </div>
