@@ -122,7 +122,7 @@ export const ImageBlock = ({ blok }: ImageBlockProps) => {
             <Image
               src={image.filename}
               fill
-              className="w-full"
+              className="w-full object-cover"
               alt={image.name}
             />
           )}
