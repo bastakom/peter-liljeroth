@@ -39,7 +39,9 @@ export const Contact = ({ blok }: any) => {
 
       <div className="w-full lg:h-full text-center lg:text-start px-6 lg:flex lg:px-32 mt-10 text-[18px]">
         <div>
-          <div className="font-inter lg:w-[80%] mb-10">{render(blok.info)}</div>
+          <div className="font-inter render-content lg:w-[80%] mb-10">
+            {render(blok.info)}
+          </div>
           <div className="font-inter render-content">
             {render(blok.business_information)}
           </div>
