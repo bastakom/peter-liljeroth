@@ -52,7 +52,7 @@ export const Carousel = ({ images }: CarouselProps) => {
   return (
     <div
       id="animation-carousel"
-      className="relative mb-16 lg:mb-0 w-full lg:hidden -mt-16"
+      className="relative mb-16 lg:mb-0 w-full md:hidden -mt-16"
       {...handlers}
     >
       <div className="relative h-[65vh] md:h-96">
