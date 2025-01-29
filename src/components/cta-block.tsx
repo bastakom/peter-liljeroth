@@ -35,7 +35,7 @@ export const CTABlock = ({ blok }: CTAblockProps) => {
       <div
         className={`${
           blok.three_images
-            ? "bg-black opacity-30 w-full absolute top-0 h-[70vh] lg:hidden z-10"
+            ? "bg-black opacity-30 w-full absolute top-0 h-[70vh] md:hidden z-10"
             : "hidden"
         }`}
       />

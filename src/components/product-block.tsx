@@ -20,7 +20,7 @@ export const ProductBlock = ({ blok }: any) => {
       </h2>
       <Carousel images={blok.products} />
 
-      <div className="lg:grid grid-cols-1 lg:grid-cols-4 gap-5 mx-auto ">
+      <div className="md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mx-auto ">
         {blok.products.map((item: any) => {
           return (
             <button
@@ -28,16 +28,16 @@ export const ProductBlock = ({ blok }: any) => {
               className="flex flex-col gap-4 bg-[white] lg:h-[50vh]"
               onClick={() => handleOpenModal(item.uuid)}
             >
-              <div className="w-full h-[45vh] gap-4 lg:h-[100%] 3xl:h-[600px] relative hidden lg:flex">
+              <div className="w-full h-[45vh] gap-4 lg:h-[100%] 3xl:h-[600px] relative hidden md:flex">
                 <Image
                   src={item.content.image?.filename || ""}
                   alt=""
                   fill
                   objectFit="cover"
-                  className="lg:object-contain hidden lg:flex"
+                  className="lg:object-contain hidden md:flex"
                 />
               </div>
-              <div className="flex-col text-left bg-[#fff] w-full pt-0 mb-6 lg:mb-0 hidden lg:flex">
+              <div className="flex-col text-left bg-[#fff] w-full pt-0 mb-6 lg:mb-0 hidden md:flex">
                 <h4 className="text-[13px]">{item.content.sub_title}</h4>
                 <h2 className="text-[28px]">{item.name}</h2>
               </div>
