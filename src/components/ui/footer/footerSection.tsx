@@ -113,7 +113,7 @@ export const FooterSection = ({ props }: FooterProps) => {
           )}
         </div>
 
-        <div className="text-[#FFFFFF] lg:ml-0 lg:mt-0 lg:flex flex-row gap-[9rem] z-10">
+        <div className="text-[#FFFFFF] lg:ml-0 lg:mt-0 lg:flex flex-row gap-[7rem]  z-10">
           <div className="text-[#FFFFFF] flex flex-col  lg:gap-16  text-center lg:text-start ">
             <div className="mb-4 lg:ml-0">
               <div className="flex items-center justify-center lg:justify-start">
