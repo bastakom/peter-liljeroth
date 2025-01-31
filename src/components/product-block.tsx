@@ -38,7 +38,9 @@ export const ProductBlock = ({ blok }: any) => {
                 />
               </div>
               <div className="flex-col text-left bg-[#fff] w-full pt-0 mb-6 lg:mb-0 hidden md:flex">
-                <h4 className="text-[13px]">{item.content.sub_title}</h4>
+                <h4 className="text-[13px] lg:min-h-[19px]">
+                  {item.content.sub_title}
+                </h4>
                 <h2 className="text-[28px]">{item.name}</h2>
               </div>
             </button>
@@ -76,7 +78,9 @@ export const ProductBlock = ({ blok }: any) => {
                   />
                   <div className="flex flex-col justify-center gap-5">
                     <div>
-                      <h4 className="text-[13px]">{item.content.sub_title}</h4>
+                      <h4 className="text-[13px] lg:min-h-[19px]">
+                        {item.content.sub_title}
+                      </h4>
                       <h2 className="text-[28px]">{item.name}</h2>
                     </div>
                     <span>{render(item.content.content)}</span>
