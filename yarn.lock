@@ -321,19 +321,25 @@
     domhandler "^5.0.3"
     selderee "^0.11.0"
 
-"@storyblok/js@^2.3.0":
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/@storyblok/js/-/js-2.3.0.tgz#be2a9eb0cfb1de2b26c6b7733529c95f2a7cad10"
-  integrity sha512-xI69Ec0hVtg6Z6asI38UU/Ztag0CYEfFlFY6ti/TcJiaJeOFAvSUnRXwZ4yb86V8jjsNPaWt37oFk7Jr+isy4g==
+"@storyblok/js@^3.1.1":
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/@storyblok/js/-/js-3.2.2.tgz#0a5ab6d2107195b40272e81d6f493679fa5c18c0"
+  integrity sha512-JiBaHJRNl18vZdgf/aiv7DSMWW3pZNkEkAAxjIAXkrNDko1hn7L5YipJK8FpevNTPEIRiliNVxTMHTztlvEAbw==
   dependencies:
-    storyblok-js-client "^5.14.2"
+    "@storyblok/richtext" "3.0.2"
+    storyblok-js-client "6.10.7"
 
-"@storyblok/react@^2.4.7":
-  version "2.4.8"
-  resolved "https://registry.yarnpkg.com/@storyblok/react/-/react-2.4.8.tgz#375ae2b10d6a94bcee367f5c4a84a165719e0f04"
-  integrity sha512-Rflvkadz1LzexEaKqNM1C4pWW3ojlNd6KqPe0n93CgCi9srA9kfwshY/H1GQYE9Q/KzmXwHxIYQivX7q4E7X2A==
+"@storyblok/react@^3.0.10":
+  version "3.0.15"
+  resolved "https://registry.yarnpkg.com/@storyblok/react/-/react-3.0.15.tgz#83279596ce05319ae4d496d8471cfe593d679646"
+  integrity sha512-WCishIb8JUSoRQLX9vCtlfP3fr/4b2EOcAgR1OmewrO0QmRP6OU9ZUMEIbQjVvvFkQ68d4qoaeyyqINSdX75XQ==
   dependencies:
-    "@storyblok/js" "^2.3.0"
+    "@storyblok/js" "^3.1.1"
+
+"@storyblok/richtext@3.0.2":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@storyblok/richtext/-/richtext-3.0.2.tgz#98b85029aa62a79ea0191708f7d924e25d37f176"
+  integrity sha512-KBLx9ycNVMyVnNyPiwBH5g9uWmiJpMzp9YvpnnADXlPLoksusrwI56BusSM8HaIgJgcnB5RR0LvhySkPFdC8Zg==
 
 "@swc/helpers@0.5.2":
   version "0.5.2"
@@ -2736,10 +2742,10 @@ slash@^3.0.0:
   resolved "https://registry.yarnpkg.com/source-map-js/-/source-map-js-1.2.1.tgz#1ce5650fddd87abc099eda37dcff024c2667ae46"
   integrity sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==
 
-storyblok-js-client@^5.14.2:
-  version "5.14.4"
-  resolved "https://registry.yarnpkg.com/storyblok-js-client/-/storyblok-js-client-5.14.4.tgz#bfc69995bc4ca40a9bd1e5745a651b4eca591b08"
-  integrity sha512-9yY33tvfO3Cbe25h/l6K0T3IxJeOOyGl/pCwsd55woT0ZEBhIiEZoMumpRsyLjD5AedW9KXLbLjMXhHazkepCA==
+storyblok-js-client@6.10.7:
+  version "6.10.7"
+  resolved "https://registry.yarnpkg.com/storyblok-js-client/-/storyblok-js-client-6.10.7.tgz#b29e7e833f54d5f59e4579fcc85df6c0a14e3b5b"
+  integrity sha512-4AdVrJxemKowvsCi+gPIZCo3/5k7JDZzOZ7HBY+GqnhhutcfqE9GvtIeg4INsOibz77XdwcJ8J6u2+Cn7bMeuw==
 
 storyblok-rich-text-react-renderer@^2.9.2:
   version "2.9.2"

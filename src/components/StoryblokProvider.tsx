@@ -1,7 +1,6 @@
 "use client";
 
-import type { PropsWithChildren } from "react";
-import { storyblokInit } from "@storyblok/react/rsc";
+import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 import Page from "./Page";
 import { Teaser } from "./Teaser";
 import { HeroBlock } from "./hero-block";
@@ -16,6 +15,7 @@ import { ProductBlock } from "./product-block";
 import { Filter } from "./filter";
 import OtherInformation from "./ovrig-information";
 import { SomeLinks } from "./some-block";
+import { PropsWithChildren } from "react";
 
 storyblokInit({
   components: {
@@ -35,7 +35,11 @@ storyblokInit({
     other_information: OtherInformation,
     some_block: SomeLinks,
   },
-  enableFallbackComponent: true,
+  use: [apiPlugin],
+
+  apiOptions: {
+    region: "eu",
+  },
 });
 
 export const StoryblokProvider = ({ children }: PropsWithChildren) => {

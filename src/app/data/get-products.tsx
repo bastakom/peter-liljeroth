@@ -1,4 +1,4 @@
-import { getStoryblokApi } from "@storyblok/react";
+import { getStoryblokApi } from "@storyblok/react/rsc";
 import { redirect } from "next/navigation";
 
 export const fetchProducts = async () => {
@@ -9,7 +9,9 @@ export const fetchProducts = async () => {
 
   const client = getStoryblokApi();
   try {
-    const data = await client.get(`cdn/stories/`, sbParams);
+    const data = await client.get(`cdn/stories/`, sbParams, {
+      cache: "no-store",
+    });
 
     if (!data) {
       throw new Error("Not Found");
