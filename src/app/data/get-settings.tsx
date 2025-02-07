@@ -1,4 +1,4 @@
-import { getStoryblokApi } from "@storyblok/react";
+import { getStoryblokApi } from "@storyblok/react/rsc";
 
 export async function getAllSettings() {
   let sbParams = {
@@ -6,7 +6,9 @@ export async function getAllSettings() {
   };
 
   const storyblokApi = getStoryblokApi();
-  const data = await storyblokApi.get(`cdn/stories/settings`, sbParams);
+  const data = await storyblokApi.get(`cdn/stories/settings`, sbParams, {
+    cache: "no-store",
+  });
 
   const config = { story: data.data.story };
 

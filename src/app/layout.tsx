@@ -11,18 +11,18 @@ export const metadata: Metadata = {
   description: "Peter Liljeroth design - Handgjort, unikt och personligt",
 };
 
-const cachedFetch = (input: any, init?: any): Promise<Response> => {
+/* const cachedFetch = (input: any, init?: any): Promise<Response> => {
   return fetch(input, {
     ...init,
     cache: "no-store",
   });
-};
+}; */
 
 storyblokInit({
   accessToken: process.env.STORYBLOK_TOKEN,
   use: [apiPlugin],
   apiOptions: {
-    fetch: cachedFetch,
+    region: "eu",
   },
 });
 

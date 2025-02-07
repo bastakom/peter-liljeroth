@@ -10,7 +10,9 @@ async function fetchData(slug: string) {
 
   const client = getStoryblokApi();
   try {
-    const data = await client.get(`cdn/stories/${slug}`, sbParams);
+    const data = await client.get(`cdn/stories/${slug}`, sbParams, {
+      cache: "no-store",
+    });
 
     if (!data) {
       redirect("/500");

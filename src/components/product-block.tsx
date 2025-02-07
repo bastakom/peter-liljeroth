@@ -30,7 +30,7 @@ export const ProductBlock = ({ blok }: any) => {
             >
               <div className="w-full h-[45vh] gap-4 lg:h-[100%] 3xl:h-[600px] relative hidden md:flex">
                 <Image
-                  src={item.content.image?.filename || ""}
+                  src={item?.content?.image?.filename || ""}
                   alt=""
                   fill
                   objectFit="cover"
@@ -39,7 +39,7 @@ export const ProductBlock = ({ blok }: any) => {
               </div>
               <div className="flex-col text-left bg-[#fff] w-full pt-0 mb-6 lg:mb-0 hidden md:flex">
                 <h4 className="text-[13px] lg:min-h-[19px]">
-                  {item.content.sub_title}
+                  {item?.content?.sub_title}
                 </h4>
                 <h2 className="text-[28px]">{item.name}</h2>
               </div>
