@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 
 async function fetchData(slug: string) {
   let sbParams = {
-    version: "draft" as const,
+    version: "published" as const,
     resolve_relations: ["product_block.products"],
   };
 
