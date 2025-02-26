@@ -3,7 +3,7 @@ import { redirect } from "next/navigation";
 
 export async function fetchData(slug: string) {
   let sbParams = {
-    version: "draft" as const,
+    version: "published" as const,
   };
 
   const client = getStoryblokApi();
