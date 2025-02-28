@@ -16,6 +16,7 @@ import { Filter } from "./filter";
 import OtherInformation from "./ovrig-information";
 import { SomeLinks } from "./some-block";
 import { PropsWithChildren } from "react";
+import { VideoBlock } from "./video-block";
 
 storyblokInit({
   components: {
@@ -34,6 +35,7 @@ storyblokInit({
     filter: Filter,
     other_information: OtherInformation,
     some_block: SomeLinks,
+    video: VideoBlock,
   },
   use: [apiPlugin],
 
