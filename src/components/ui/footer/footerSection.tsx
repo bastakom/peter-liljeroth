@@ -84,7 +84,7 @@ export const FooterSection = ({ props }: FooterProps) => {
         </div>
         <div className="block z-10 lg:hidden">
           <div className="flex text-[#FFFFFF] justify-center items-center">
-            <h2 className="font-dupincel mt-4 lg:mt-0 text-[25px] mb-2">
+            <h2 className="font-dupincel mt-4 lg:mt-0 text-[20px] lg:text-[25px] mb-2">
               Länkar
             </h2>
 
@@ -115,18 +115,18 @@ export const FooterSection = ({ props }: FooterProps) => {
 
         <div className="text-[#FFFFFF] flex flex-col  lg:gap-16  text-center lg:text-start z-10">
           <div className="mb-4 lg:ml-0">
-            <div className="flex items-center justify-center lg:justify-start">
-              <h2 className="text-[25px] lg:text-3xl mb-4 font-dupincel">
+            <div
+              className="flex items-center justify-center lg:justify-start gap-2"
+              onClick={() => setBusinessInfoFirstOpen(!isBusinessInfoFirstOpen)}
+            >
+              <h2 className="text-[20px] lg:text-3xl mb-4 font-dupincel">
                 {props.business_title}
               </h2>
               <IoIosArrowDown
                 fontSize={25}
-                className={`-mt-4 ml-3 transform lg:hidden ${
+                className={`-mt-4  transform lg:hidden ${
                   isBusinessInfoFirstOpen ? "rotate-180" : "rotate-0"
                 } transition-transform`}
-                onClick={() =>
-                  setBusinessInfoFirstOpen(!isBusinessInfoFirstOpen)
-                }
               />
             </div>
             <div
@@ -143,18 +143,20 @@ export const FooterSection = ({ props }: FooterProps) => {
             </div>
           </div>
           <div className="mb-4 lg:ml-0 z-10">
-            <div className="flex items-center justify-center lg:justify-start">
-              <h2 className="text-[25px] lg:text-3xl mb-4 font-dupincel">
+            <div
+              className="flex items-center justify-center lg:justify-start gap-2"
+              onClick={() =>
+                setBusinessInfoSecondOpen(!isBusinessInfoSecondOpen)
+              }
+            >
+              <h2 className="text-[20px] lg:text-3xl mb-4 font-dupincel">
                 {second_business_title}
               </h2>
               <IoIosArrowDown
                 fontSize={25}
-                className={`-mt-4 ml-3 transform lg:hidden ${
+                className={`-mt-4  transform lg:hidden ${
                   isBusinessInfoSecondOpen ? "rotate-180" : "rotate-0"
                 } transition-transform`}
-                onClick={() =>
-                  setBusinessInfoSecondOpen(!isBusinessInfoSecondOpen)
-                }
               />
             </div>
             <div
@@ -173,7 +175,7 @@ export const FooterSection = ({ props }: FooterProps) => {
         </div>
 
         <div className="mt-6 lg:ml-0 lg:mt-0 text-center  lg:text-start z-10 text-white">
-          <h2 className="text-[25px] lg:text-3xl mb-4 font-dupincel">
+          <h2 className="text-[20px] lg:text-3xl mb-4 font-dupincel">
             {contact_title}
           </h2>
           <div className="font-inter-thin text-[16px] lg:text-[22px] mb-0 lg:mb-6">

@@ -69,12 +69,14 @@ export const Carousel = ({ images }: CarouselProps) => {
               className="w-full h-[470px] relative"
               onClick={() => handleOpenModal(src.uuid)}
             >
-              <Image
-                src={src?.content?.image.filename}
-                fill
-                className="object-contain top-0"
-                alt={`Slide ${index + 1}`}
-              />
+              <div className="relative min-w-[330px] h-[350px] lg:w-[400px] lg:h-[470px] ">
+                <Image
+                  src={src?.content?.image.filename}
+                  fill
+                  className="object-cover top-0"
+                  alt={`Slide ${index + 1}`}
+                />
+              </div>
             </button>
 
             <div className="flex flex-col text-left bg-[#fff] w-full pt-0 mb-10 -mt-10 lg:mb-0">
